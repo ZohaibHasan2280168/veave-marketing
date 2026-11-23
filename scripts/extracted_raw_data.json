@@ -1,0 +1,1871 @@
+{
+  "cssVars": {},
+  "colors": {
+    "text": {
+      "#000000": 3,
+      "#16303f": 446,
+      "#2d4959": 15,
+      "#ffffff": 83,
+      "#0b5ad9": 16,
+      "#587080": 99,
+      "#9cc4ff": 18,
+      "#c6d6e1": 149,
+      "#8fa9bb": 29,
+      "#257a55": 21,
+      "#5fb58a": 6,
+      "#0e6bfd": 18
+    },
+    "backgrounds": {
+      "#ffffff": 103,
+      "oklab(0.999994 0.0000455678 0.0000200868 / 0.92)": 1,
+      "#0e6bfd": 34,
+      "#fbfcfd": 1,
+      "#122a38": 14,
+      "#0f2330": 3,
+      "#1b3a4c": 7,
+      "#f6f8fa": 1,
+      "#eef2f5": 7,
+      "#e4f3ea": 13,
+      "#9fb8c9": 5,
+      "#e9f3fa": 2,
+      "#e3eaef": 3,
+      "#5fb58a": 1,
+      "#257a55": 3,
+      "#587080": 2,
+      "#f3f6f8": 8,
+      "#ffffff1f": 1,
+      "oklab(0.707128 -0.0996006 0.035881 / 0.6)": 6,
+      "#0d1f2b": 1,
+      "#0b1b29": 2,
+      "#0e202e": 1,
+      "#0b1d2d": 1,
+      "#0b1e2e": 7,
+      "#0b1c2b": 1,
+      "#dec09724": 4,
+      "#0e6bfd4d": 4,
+      "#04132133": 8,
+      "#ffffff08": 6,
+      "#9aceb524": 4,
+      "#0000001a": 1,
+      "#c6d6e1": 6,
+      "#16303f": 1
+    },
+    "borders": {
+      "#e3eaef": 57,
+      "#dbe4ea": 47,
+      "#eef2f5": 22,
+      "#ffffff33": 6,
+      "#0e6bfd": 1,
+      "#16303f": 2,
+      "#ffffff1f": 21,
+      "#80b8f23d": 1,
+      "#abd3f48c": 1,
+      "#a5dcff": 1,
+      "#8eb2d53d": 7,
+      "rgb(255, 255, 255) rgba(255, 255, 255, 0.12) rgba(255, 255, 255, 0.12)": 1,
+      "rgba(255, 255, 255, 0.12) rgba(255, 255, 255, 0.12) rgba(255, 255, 255, 0.12) rgba(154, 189, 221, 0.25)": 8,
+      "#74b8ff61": 8,
+      "#accae629": 2,
+      "#85b0d733": 3
+    },
+    "fills": {
+      "#000000": 14,
+      "#0e6bfd": 4,
+      "#edf8ff": 1,
+      "#b5d5ff": 8,
+      "#c6d6e1": 4
+    },
+    "strokes": {
+      "#2d4959": 2,
+      "#16303f": 4,
+      "#8fa9bb": 4,
+      "#8db8e642": 8,
+      "#b4e2ff": 8,
+      "#e2fcff": 8,
+      "#abd1ff": 16,
+      "#9cc4ff": 15,
+      "#0e6bfd": 36,
+      "#c6d6e1": 4,
+      "#ffffff": 2
+    },
+    "gradients": [
+      "radial-gradient(70% 60% at 85% 20%, rgba(14, 107, 253, 0.35), rgba(0, 0, 0, 0) 70%)",
+      "repeating-linear-gradient(90deg, rgb(22, 48, 63) 0px, rgb(22, 48, 63) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 4px)",
+      "linear-gradient(90deg, rgb(219, 228, 234), rgb(159, 184, 201) 30%, rgb(14, 107, 253) 55%, rgb(159, 184, 201) 80%, rgb(219, 228, 234))",
+      "linear-gradient(90deg, rgb(14, 107, 253), oklab(0.79432 -0.0177906 -0.0868343))",
+      "repeating-linear-gradient(rgb(14, 107, 253) 0px, rgb(14, 107, 253) 4px, rgba(0, 0, 0, 0) 4px, rgba(0, 0, 0, 0) 8px)",
+      "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(147, 202, 255) 40%, rgb(178, 236, 255) 60%, rgba(0, 0, 0, 0))",
+      "radial-gradient(at 50% 49%, rgba(42, 125, 224, 0.16), rgba(0, 0, 0, 0) 48%), none",
+      "linear-gradient(90deg, rgba(129, 199, 255, 0.5), rgba(129, 199, 255, 0.14) 65%, rgb(145, 213, 255))",
+      "linear-gradient(145deg, rgb(53, 91, 120), rgb(24, 53, 77))",
+      "linear-gradient(135deg, rgb(34, 79, 116), rgb(16, 47, 73))",
+      "linear-gradient(145deg, rgba(75, 135, 190, 0.1), rgba(0, 0, 0, 0)), none",
+      "radial-gradient(at 0% 50%, rgba(50, 116, 182, 0.1), rgba(0, 0, 0, 0) 65%), none",
+      "linear-gradient(125deg, rgb(24, 53, 77), rgb(15, 38, 58) 75%)",
+      "linear-gradient(145deg, rgb(216, 229, 237), rgb(185, 203, 216))",
+      "radial-gradient(480px 288px at 100% 0px, rgba(14, 107, 253, 0.5), rgba(0, 0, 0, 0) 72%)"
+    ]
+  },
+  "fontFamilies": {
+    "Geist": 902,
+    "Geist Mono": 1
+  },
+  "fontSizes": {
+    "16px (weight: 400, line-height: 24px)": 233,
+    "14px (weight: 500, line-height: 20px)": 1,
+    "14px (weight: 550, line-height: 20px)": 24,
+    "14px (weight: 600, line-height: 20px)": 47,
+    "15px (weight: 550, line-height: 22.5px)": 11,
+    "12px (weight: 700, line-height: 15.6px)": 13,
+    "12px (weight: 400, line-height: 16px)": 44,
+    "14px (weight: 400, line-height: 20px)": 135,
+    "46px (weight: 600, line-height: 47.84px)": 2,
+    "17px (weight: 400, line-height: 26.35px)": 3,
+    "17px (weight: 600, line-height: 26.35px)": 1,
+    "15px (weight: 600, line-height: 22.5px)": 8,
+    "13px (weight: 400, line-height: 19.5px)": 1,
+    "10px (weight: 400, line-height: 15px)": 135,
+    "9.5px (weight: 600, line-height: 10.45px)": 1,
+    "13px (weight: 600, line-height: 19.5px)": 2,
+    "10.5px (weight: 400, line-height: 15.75px)": 1,
+    "9px (weight: 400, line-height: 13.5px)": 7,
+    "10.5px (weight: 600, line-height: 15.75px)": 11,
+    "10px (weight: 600, line-height: 15px)": 27,
+    "8.5px (weight: 650, line-height: 11.05px)": 23,
+    "9.5px (weight: 600, line-height: 14.25px)": 3,
+    "9px (weight: 650, line-height: 13.5px)": 9,
+    "14px (weight: 650, line-height: 20px)": 1,
+    "9px (weight: 600, line-height: 13.5px)": 1,
+    "8.5px (weight: 400, line-height: 12.75px)": 1,
+    "8px (weight: 650, line-height: 12px)": 1,
+    "11px (weight: 400, line-height: 16.5px)": 10,
+    "10px (weight: 650, line-height: 15px)": 19,
+    "10px (weight: 700, line-height: 15px)": 2,
+    "11px (weight: 400, line-height: 15.95px)": 6,
+    "9.5px (weight: 400, line-height: 14.25px)": 2,
+    "11px (weight: 700, line-height: 14.3px)": 3,
+    "16px (weight: 650, line-height: 24px)": 1,
+    "13px (weight: 400, line-height: 17.875px)": 4,
+    "12px (weight: 600, line-height: 16px)": 21,
+    "12px (weight: 600, line-height: 15px)": 2,
+    "12px (weight: 550, line-height: 16px)": 3,
+    "22px (weight: 600, line-height: 24.2px)": 5,
+    "11px (weight: 500, line-height: 0px)": 1,
+    "46px (weight: 600, line-height: 49.68px)": 4,
+    "16px (weight: 600, line-height: 24px)": 6,
+    "14px (weight: 400, line-height: 19.25px)": 6,
+    "16px (weight: 400, line-height: 22px)": 1,
+    "19px (weight: 600, line-height: 25.65px)": 1,
+    "16px (weight: 400, line-height: 24.8px)": 1,
+    "28px (weight: 600, line-height: 30.8px)": 3,
+    "15px (weight: 400, line-height: 22.5px)": 4,
+    "17px (weight: 600, line-height: 22.1px)": 18,
+    "15px (weight: 400, line-height: 21.75px)": 17,
+    "18px (weight: 400, line-height: 18px)": 17
+  },
+  "borderRadii": {
+    "7px": 41,
+    "14px": 29,
+    "10px": 41,
+    "4px": 105,
+    "3px 3px 0px 0px": 6,
+    "3.35544e+07px": 35,
+    "5px": 1,
+    "14px 14px 14px 4px": 4,
+    "14px 14px 4px": 5,
+    "20px": 15,
+    "6px": 13,
+    "17px": 1,
+    "11px": 8,
+    "50%": 17,
+    "8px": 10,
+    "12px": 8,
+    "0px 0px 12px 12px": 8,
+    "1px": 9
+  },
+  "shadows": {
+    "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(14, 107, 253) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px": 1,
+    "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(18, 42, 56, 0.08) 0px 20px 50px 0px": 3,
+    "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.45) 0px 30px 80px 0px": 1,
+    "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.4) 0px 18px 44px 0px": 8,
+    "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.55) 0px 24px 60px 0px": 1,
+    "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.35) 0px 12px 30px 0px": 1,
+    "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.45) 0px 20px 50px 0px": 1,
+    "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.45) 0px 24px 60px 0px": 1,
+    "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(18, 42, 56, 0.45) 0px 10px 24px -14px": 6,
+    "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(243, 246, 248) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px": 6,
+    "rgba(0, 0, 0, 0.16) 0px 20px 50px 0px, rgba(210, 232, 255, 0.06) 0px 1px 0px 0px inset": 1,
+    "rgba(221, 247, 255, 0.15) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.12) 0px 6px 16px 0px": 1,
+    "rgba(63, 154, 235, 0.08) 0px 0px 0px 3px, rgba(0, 0, 0, 0.16) 0px 8px 26px 0px, rgba(46, 139, 244, 0.16) 0px 0px 28px 0px, rgba(205, 237, 255, 0.25) 0px 1px 0px 0px inset": 1,
+    "rgba(185, 218, 247, 0.05) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.08) 0px 5px 14px 0px": 7,
+    "rgba(189, 220, 255, 0.09) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.18) 0px 12px 30px 0px": 8,
+    "rgba(0, 0, 0, 0.12) 0px 2px 6px 0px": 1
+  },
+  "images": [
+    {
+      "id": "img_0",
+      "src": "https://autodealer.io/img/brand-logos/wordmark-hinted-black-240.png",
+      "alt": "AutoDealer.io",
+      "width": 240,
+      "height": 26,
+      "classes": "max-sm:h-[22px] max-sm:w-[203px]",
+      "visible": true
+    },
+    {
+      "id": "img_1",
+      "src": "https://autodealer.io/img/feature-icons/inventory.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_2",
+      "src": "https://autodealer.io/img/feature-icons/photos-studio-360.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_3",
+      "src": "https://autodealer.io/img/feature-icons/dealership-website.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_4",
+      "src": "https://autodealer.io/img/feature-icons/ai-salesman-operator.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_5",
+      "src": "https://autodealer.io/img/feature-icons/customers-leads.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_6",
+      "src": "https://autodealer.io/img/feature-icons/deals-paperwork-esign.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_7",
+      "src": "https://autodealer.io/img/feature-icons/advertising-feeds.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_8",
+      "src": "https://autodealer.io/img/feature-icons/recon-work-orders.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_9",
+      "src": "https://autodealer.io/img/feature-icons/payment-processing.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_10",
+      "src": "https://autodealer.io/img/feature-icons/books-accounting.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_11",
+      "src": "https://autodealer.io/img/feature-icons/buy-here-pay-here.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_12",
+      "src": "https://autodealer.io/img/feature-icons/floor-plan.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_13",
+      "src": "https://autodealer.io/img/feature-icons/reporting-insights.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_14",
+      "src": "https://autodealer.io/img/feature-icons/titles-dmv.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_15",
+      "src": "https://autodealer.io/img/feature-icons/compliance.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_16",
+      "src": "https://autodealer.io/img/feature-icons/ai-updates-telegram.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_17",
+      "src": "https://autodealer.io/img/feature-icons/security-roles.svg",
+      "alt": "",
+      "width": 150,
+      "height": 150,
+      "classes": "size-10 max-w-none",
+      "visible": false
+    },
+    {
+      "id": "img_18",
+      "src": "https://autodealer.io/img/demo-vehicles/gle-450-w320.avif",
+      "alt": "",
+      "width": 313.535400390625,
+      "height": 208.69696044921875,
+      "classes": "block h-auto w-full rounded-xl shadow-[0_24px_60px_rgb(0_0_0/0.55)]",
+      "visible": true
+    },
+    {
+      "id": "img_19",
+      "src": "https://autodealer.io/img/demo-vehicles/gle-450-w104.avif",
+      "alt": "",
+      "width": 50.94952392578125,
+      "height": 33.313140869140625,
+      "classes": "h-[34px] w-[52px] shrink-0 rounded-[5px] object-cover",
+      "visible": true
+    },
+    {
+      "id": "img_20",
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      "alt": "",
+      "width": 1,
+      "height": 1,
+      "classes": "block h-auto w-full",
+      "visible": false
+    },
+    {
+      "id": "img_21",
+      "src": "https://autodealer.io/img/partner-logos/manheim.svg",
+      "alt": "",
+      "width": 34,
+      "height": 34,
+      "classes": "size-6 shrink-0 min-[22.5rem]:size-7 sm:size-8.5",
+      "visible": true
+    },
+    {
+      "id": "img_22",
+      "src": "https://autodealer.io/img/partner-logos/adesa.svg",
+      "alt": "ADESA",
+      "width": 118,
+      "height": 27.953125,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_23",
+      "src": "https://autodealer.io/img/partner-logos/openlane.png",
+      "alt": "OPENLANE",
+      "width": 145,
+      "height": 18,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_24",
+      "src": "https://autodealer.io/img/partner-logos/edge-pipeline.svg",
+      "alt": "EDGE Pipeline",
+      "width": 127,
+      "height": 37.921875,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_25",
+      "src": "https://autodealer.io/img/partner-logos/carfax.svg",
+      "alt": "CARFAX",
+      "width": 139,
+      "height": 26.03125,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_26",
+      "src": "https://autodealer.io/img/partner-logos/autocheck.svg",
+      "alt": "AutoCheck",
+      "width": 124,
+      "height": 30.984375,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_27",
+      "src": "https://autodealer.io/img/partner-logos/cargurus.svg",
+      "alt": "CarGurus",
+      "width": 140,
+      "height": 25.90625,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_28",
+      "src": "https://autodealer.io/img/partner-logos/autotrader.svg",
+      "alt": "Autotrader",
+      "width": 144,
+      "height": 36,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_29",
+      "src": "https://autodealer.io/img/partner-logos/cars-com.svg",
+      "alt": "Cars.com",
+      "width": 141,
+      "height": 35.9375,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_30",
+      "src": "https://autodealer.io/img/partner-logos/carsforsale.png",
+      "alt": "Carsforsale.com",
+      "width": 90,
+      "height": 41.875,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_31",
+      "src": "https://autodealer.io/img/partner-logos/truecar.png",
+      "alt": "TrueCar",
+      "width": 139,
+      "height": 23.921875,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_32",
+      "src": "https://autodealer.io/img/partner-logos/edmunds.svg",
+      "alt": "Edmunds",
+      "width": 136,
+      "height": 21.921875,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_33",
+      "src": "https://autodealer.io/img/partner-logos/google.svg",
+      "alt": "Google",
+      "width": 104,
+      "height": 34.125,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_34",
+      "src": "https://autodealer.io/img/partner-logos/facebook.svg",
+      "alt": "",
+      "width": 34,
+      "height": 34,
+      "classes": "size-6 shrink-0 min-[22.5rem]:size-7 sm:size-8.5",
+      "visible": true
+    },
+    {
+      "id": "img_35",
+      "src": "https://autodealer.io/img/partner-logos/quickbooks.svg",
+      "alt": "",
+      "width": 34,
+      "height": 34,
+      "classes": "size-6 shrink-0 min-[22.5rem]:size-7 sm:size-8.5",
+      "visible": true
+    },
+    {
+      "id": "img_36",
+      "src": "https://autodealer.io/img/partner-logos/plaid.svg",
+      "alt": "",
+      "width": 34,
+      "height": 34,
+      "classes": "size-6 shrink-0 min-[22.5rem]:size-7 sm:size-8.5",
+      "visible": true
+    },
+    {
+      "id": "img_37",
+      "src": "https://autodealer.io/img/partner-logos/stripe.svg",
+      "alt": "Stripe",
+      "width": 62,
+      "height": 26,
+      "classes": "h-auto max-w-full min-w-0 max-sm:scale-[0.82]",
+      "visible": true
+    },
+    {
+      "id": "img_38",
+      "src": "https://autodealer.io/img/feature-icons/inventory.svg",
+      "alt": "",
+      "width": 64,
+      "height": 64,
+      "classes": "size-16 max-w-none",
+      "visible": true
+    },
+    {
+      "id": "img_39",
+      "src": "https://autodealer.io/img/feature-icons/dealership-website.svg",
+      "alt": "",
+      "width": 64,
+      "height": 64,
+      "classes": "size-16 max-w-none",
+      "visible": true
+    },
+    {
+      "id": "img_40",
+      "src": "https://autodealer.io/img/feature-icons/customers-leads.svg",
+      "alt": "",
+      "width": 64,
+      "height": 64,
+      "classes": "size-16 max-w-none",
+      "visible": true
+    },
+    {
+      "id": "img_41",
+      "src": "https://autodealer.io/img/feature-icons/deals-paperwork-esign.svg",
+      "alt": "",
+      "width": 64,
+      "height": 64,
+      "classes": "size-16 max-w-none",
+      "visible": true
+    },
+    {
+      "id": "img_42",
+      "src": "https://autodealer.io/img/feature-icons/payment-processing.svg",
+      "alt": "",
+      "width": 64,
+      "height": 64,
+      "classes": "size-16 max-w-none",
+      "visible": true
+    },
+    {
+      "id": "img_43",
+      "src": "https://autodealer.io/img/feature-icons/books-accounting.svg",
+      "alt": "",
+      "width": 64,
+      "height": 64,
+      "classes": "size-16 max-w-none",
+      "visible": true
+    },
+    {
+      "id": "img_44",
+      "src": "https://autodealer.io/img/feature-icons/ai-salesman-operator.svg",
+      "alt": "",
+      "width": 48,
+      "height": 48,
+      "classes": "size-12 max-w-none",
+      "visible": true
+    },
+    {
+      "id": "img_45",
+      "src": "https://autodealer.io/img/feature-icons/inventory.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_46",
+      "src": "https://autodealer.io/img/feature-icons/photos-studio-360.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_47",
+      "src": "https://autodealer.io/img/feature-icons/dealership-website.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_48",
+      "src": "https://autodealer.io/img/feature-icons/ai-salesman-operator.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_49",
+      "src": "https://autodealer.io/img/feature-icons/customers-leads.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_50",
+      "src": "https://autodealer.io/img/feature-icons/deals-paperwork-esign.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_51",
+      "src": "https://autodealer.io/img/feature-icons/advertising-feeds.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_52",
+      "src": "https://autodealer.io/img/feature-icons/recon-work-orders.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_53",
+      "src": "https://autodealer.io/img/feature-icons/payment-processing.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_54",
+      "src": "https://autodealer.io/img/feature-icons/books-accounting.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_55",
+      "src": "https://autodealer.io/img/feature-icons/buy-here-pay-here.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_56",
+      "src": "https://autodealer.io/img/feature-icons/floor-plan.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_57",
+      "src": "https://autodealer.io/img/feature-icons/reporting-insights.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_58",
+      "src": "https://autodealer.io/img/feature-icons/titles-dmv.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_59",
+      "src": "https://autodealer.io/img/feature-icons/compliance.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_60",
+      "src": "https://autodealer.io/img/feature-icons/ai-updates-telegram.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_61",
+      "src": "https://autodealer.io/img/feature-icons/security-roles.svg",
+      "alt": "",
+      "width": 96,
+      "height": 96,
+      "classes": "size-16 lg:size-20 xl:size-24",
+      "visible": true
+    },
+    {
+      "id": "img_62",
+      "src": "https://autodealer.io/img/feature-icons/inventory.svg",
+      "alt": "",
+      "width": 25,
+      "height": 25,
+      "classes": "block object-contain",
+      "visible": true
+    },
+    {
+      "id": "img_63",
+      "src": "https://autodealer.io/img/feature-icons/dealership-website.svg",
+      "alt": "",
+      "width": 25,
+      "height": 25,
+      "classes": "block object-contain",
+      "visible": true
+    },
+    {
+      "id": "img_64",
+      "src": "https://autodealer.io/img/feature-icons/customers-leads.svg",
+      "alt": "",
+      "width": 25,
+      "height": 25,
+      "classes": "block object-contain",
+      "visible": true
+    },
+    {
+      "id": "img_65",
+      "src": "https://autodealer.io/img/feature-icons/deals-paperwork-esign.svg",
+      "alt": "",
+      "width": 25,
+      "height": 25,
+      "classes": "block object-contain",
+      "visible": true
+    },
+    {
+      "id": "img_66",
+      "src": "https://autodealer.io/img/feature-icons/books-accounting.svg",
+      "alt": "",
+      "width": 25,
+      "height": 25,
+      "classes": "block object-contain",
+      "visible": true
+    },
+    {
+      "id": "img_67",
+      "src": "https://autodealer.io/img/feature-icons/titles-dmv.svg",
+      "alt": "",
+      "width": 25,
+      "height": 25,
+      "classes": "block object-contain",
+      "visible": true
+    },
+    {
+      "id": "img_68",
+      "src": "https://autodealer.io/img/feature-icons/payment-processing.svg",
+      "alt": "",
+      "width": 25,
+      "height": 25,
+      "classes": "block object-contain",
+      "visible": true
+    },
+    {
+      "id": "img_69",
+      "src": "https://autodealer.io/img/feature-icons/reporting-insights.svg",
+      "alt": "",
+      "width": 25,
+      "height": 25,
+      "classes": "block object-contain",
+      "visible": true
+    },
+    {
+      "id": "img_70",
+      "src": "https://autodealer.io/img/demo-vehicles/gle-450-w104.avif",
+      "alt": "",
+      "width": 80,
+      "height": 53.0625,
+      "classes": "block w-full object-contain",
+      "visible": true
+    },
+    {
+      "id": "img_71",
+      "src": "https://autodealer.io/img/demo-vehicles/gle-450-w104.avif",
+      "alt": "",
+      "width": 80,
+      "height": 53.0625,
+      "classes": "block w-full object-contain",
+      "visible": true
+    },
+    {
+      "id": "img_72",
+      "src": "https://autodealer.io/img/demo-vehicles/bmw-m5-045-w160.avif",
+      "alt": "White BMW M5. Front corner, driver side.",
+      "width": 165.5,
+      "height": 110.328125,
+      "classes": "aspect-[3/2] w-full rounded-lg border border-border object-cover",
+      "visible": true
+    },
+    {
+      "id": "img_73",
+      "src": "https://autodealer.io/img/demo-vehicles/bmw-m5-315-w160.avif",
+      "alt": "White BMW M5. Front corner, passenger side.",
+      "width": 165.5,
+      "height": 110.328125,
+      "classes": "aspect-[3/2] w-full rounded-lg border border-border object-cover",
+      "visible": true
+    },
+    {
+      "id": "img_74",
+      "src": "https://autodealer.io/img/demo-vehicles/bmw-m5-225-w160.avif",
+      "alt": "White BMW M5. Rear corner, passenger side.",
+      "width": 165.5,
+      "height": 110.328125,
+      "classes": "aspect-[3/2] w-full rounded-lg border border-border object-cover",
+      "visible": true
+    },
+    {
+      "id": "img_75",
+      "src": "https://autodealer.io/img/demo-vehicles/bmw-m5-135-w160.avif",
+      "alt": "White BMW M5. Rear corner, driver side.",
+      "width": 165.5,
+      "height": 110.328125,
+      "classes": "aspect-[3/2] w-full rounded-lg border border-border object-cover",
+      "visible": true
+    },
+    {
+      "id": "img_76",
+      "src": "https://autodealer.io/img/benefit-icons/14-day-free-trial.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_77",
+      "src": "https://autodealer.io/img/benefit-icons/no-sales-call.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_78",
+      "src": "https://autodealer.io/img/benefit-icons/no-setup-fees.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_79",
+      "src": "https://autodealer.io/img/benefit-icons/no-long-term-contract.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_80",
+      "src": "https://autodealer.io/img/benefit-icons/cancel-any-time.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_81",
+      "src": "https://autodealer.io/img/benefit-icons/no-add-on-modules.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_82",
+      "src": "https://autodealer.io/img/benefit-icons/day-one-ready.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_83",
+      "src": "https://autodealer.io/img/benefit-icons/day-one-website.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_84",
+      "src": "https://autodealer.io/img/benefit-icons/run-from-your-phone.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_85",
+      "src": "https://autodealer.io/img/benefit-icons/english-and-spanish.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_86",
+      "src": "https://autodealer.io/img/benefit-icons/bring-your-inventory.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_87",
+      "src": "https://autodealer.io/img/benefit-icons/focused-on-dealers.svg",
+      "alt": "",
+      "width": 56,
+      "height": 56,
+      "classes": "size-12 max-w-none sm:size-14",
+      "visible": true
+    },
+    {
+      "id": "img_88",
+      "src": "https://autodealer.io/img/brand-logos/wordmark-hinted-white-240.png",
+      "alt": "AutoDealer.io",
+      "width": 240,
+      "height": 26,
+      "classes": "",
+      "visible": true
+    }
+  ],
+  "svgs": [
+    {
+      "id": "svg_0",
+      "context": "button.site-menu-toggle",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"size-4 transition-transform group-has-[:popover-open]/header:rotate-180\"><path d=\"m6 9 6 6 6-6\"></path></svg>",
+      "width": 16,
+      "height": 16,
+      "classes": "size-4 transition-transform group-has-[:popover-open]/header:rotate-180"
+    },
+    {
+      "id": "svg_1",
+      "context": "button.site-menu-toggle",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"size-5 group-has-[:popover-open]/header:hidden\"><path d=\"M4 7h16M4 12h16M4 17h16\"></path></svg>",
+      "width": 0,
+      "height": 0,
+      "classes": "size-5 group-has-[:popover-open]/header:hidden"
+    },
+    {
+      "id": "svg_2",
+      "context": "button.site-menu-toggle",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"hidden size-5 group-has-[:popover-open]/header:block\"><path d=\"m6 6 12 12M18 6 6 18\"></path></svg>",
+      "width": 0,
+      "height": 0,
+      "classes": "hidden size-5 group-has-[:popover-open]/header:block"
+    },
+    {
+      "id": "svg_3",
+      "context": "section.story",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"h-2 w-4 shrink-0 text-primary\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 15.6767578125,
+      "height": 7.83837890625,
+      "classes": "h-2 w-4 shrink-0 text-primary"
+    },
+    {
+      "id": "svg_4",
+      "context": "section.story",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"story-after h-[13px] w-[26px] shrink-0 text-primary\" style=\"--at:calc(var(--s3) + 0.8s)\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 25.4747314453125,
+      "height": 12.73736572265625,
+      "classes": "story-after h-[13px] w-[26px] shrink-0 text-primary"
+    },
+    {
+      "id": "svg_5",
+      "context": "section.story",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"story-after h-[13px] w-[26px] shrink-0 text-primary\" style=\"--at:calc(var(--s3) + 3.8s)\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 25.4747314453125,
+      "height": 12.737335205078125,
+      "classes": "story-after h-[13px] w-[26px] shrink-0 text-primary"
+    },
+    {
+      "id": "svg_6",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"w-6 shrink-0 text-primary\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 24,
+      "height": 11.65625,
+      "classes": "w-6 shrink-0 text-primary"
+    },
+    {
+      "id": "svg_7",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M5.5 3.5v9m5-9v9\"></path></svg>",
+      "width": 13,
+      "height": 13,
+      "classes": ""
+    },
+    {
+      "id": "svg_8",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg class=\"ai-network-lines\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M 46 44 H 40 Q 38 44 38 42 V 20 Q 38 18 36 18 H 18\" vector-effect=\"non-scaling-stroke\"></path><path d=\"M 46 48 H 37 Q 35 48 35 46 V 41.3 Q 35 39.3 33 39.3 H 18\" vector-effect=\"non-scaling-stroke\"></path><path d=\"M 46 52 H 37 Q 35 52 35 54 V 58.6 Q 35 60.6 33 60.6 H 18\" vector-effect=\"non-scaling-stroke\"></path><path d=\"M 46 56 H 40 Q 38 56 38 58 V 79.9 Q 38 81.9 36 81.9 H 18\" vector-effect=\"non-scaling-stroke\"></path><path d=\"M 54 44 H 60 Q 62 44 62 42 V 20 Q 62 18 64 18 H 82\" vector-effect=\"non-scaling-stroke\"></path><path d=\"M 54 48 H 63 Q 65 48 65 46 V 41.3 Q 65 39.3 67 39.3 H 82\" vector-effect=\"non-scaling-stroke\"></path><path d=\"M 54 52 H 63 Q 65 52 65 54 V 58.6 Q 65 60.6 67 60.6 H 82\" vector-effect=\"non-scaling-stroke\"></path><path d=\"M 54 56 H 60 Q 62 56 62 58 V 79.9 Q 62 81.9 64 81.9 H 82\" vector-effect=\"non-scaling-stroke\"></path><path data-link=\"0\" d=\"M 46 44 H 40 Q 38 44 38 42 V 20 Q 38 18 36 18 H 18\" vector-effect=\"non-scaling-stroke\"></path><path data-link=\"1\" d=\"M 46 48 H 37 Q 35 48 35 46 V 41.3 Q 35 39.3 33 39.3 H 18\" vector-effect=\"non-scaling-stroke\"></path><path data-link=\"2\" d=\"M 46 52 H 37 Q 35 52 35 54 V 58.6 Q 35 60.6 33 60.6 H 18\" vector-effect=\"non-scaling-stroke\"></path><path data-link=\"3\" d=\"M 46 56 H 40 Q 38 56 38 58 V 79.9 Q 38 81.9 36 81.9 H 18\" vector-effect=\"non-scaling-stroke\"></path><path data-link=\"4\" d=\"M 54 44 H 60 Q 62 44 62 42 V 20 Q 62 18 64 18 H 82\" vector-effect=\"non-scaling-stroke\"></path><path data-link=\"5\" d=\"M 54 48 H 63 Q 65 48 65 46 V 41.3 Q 65 39.3 67 39.3 H 82\" vector-effect=\"non-scaling-stroke\"></path><path data-link=\"6\" d=\"M 54 52 H 63 Q 65 52 65 54 V 58.6 Q 65 60.6 67 60.6 H 82\" vector-effect=\"non-scaling-stroke\"></path><path data-link=\"7\" d=\"M 54 56 H 60 Q 62 56 62 58 V 79.9 Q 62 81.9 64 81.9 H 82\" vector-effect=\"non-scaling-stroke\"></path><path data-link=\"0\" data-signal=\"true\" d=\"M 46 44 H 40 Q 38 44 38 42 V 20 Q 38 18 36 18 H 18\" pathLength=\"1\"></path><path data-link=\"1\" data-signal=\"true\" d=\"M 46 48 H 37 Q 35 48 35 46 V 41.3 Q 35 39.3 33 39.3 H 18\" pathLength=\"1\"></path><path data-link=\"2\" data-signal=\"true\" d=\"M 46 52 H 37 Q 35 52 35 54 V 58.6 Q 35 60.6 33 60.6 H 18\" pathLength=\"1\"></path><path data-link=\"3\" data-signal=\"true\" d=\"M 46 56 H 40 Q 38 56 38 58 V 79.9 Q 38 81.9 36 81.9 H 18\" pathLength=\"1\"></path><path data-link=\"4\" data-signal=\"true\" d=\"M 54 44 H 60 Q 62 44 62 42 V 20 Q 62 18 64 18 H 82\" pathLength=\"1\"></path><path data-link=\"5\" data-signal=\"true\" d=\"M 54 48 H 63 Q 65 48 65 46 V 41.3 Q 65 39.3 67 39.3 H 82\" pathLength=\"1\"></path><path data-link=\"6\" data-signal=\"true\" d=\"M 54 52 H 63 Q 65 52 65 54 V 58.6 Q 65 60.6 67 60.6 H 82\" pathLength=\"1\"></path><path data-link=\"7\" data-signal=\"true\" d=\"M 54 56 H 60 Q 62 56 62 58 V 79.9 Q 62 81.9 64 81.9 H 82\" pathLength=\"1\"></path></svg>",
+      "width": 711.1875,
+      "height": 526.28125,
+      "classes": "ai-network-lines"
+    },
+    {
+      "id": "svg_9",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg class=\"ai-core-field\" viewBox=\"0 0 240 240\" fill=\"none\" aria-hidden=\"true\"><defs><radialGradient id=\"home-ai-atmosphere\"><stop offset=\"0\" stop-color=\"#77bcff\" stop-opacity=\".18\"></stop><stop offset=\".5\" stop-color=\"#277ddd\" stop-opacity=\".08\"></stop><stop offset=\"1\" stop-color=\"#277ddd\" stop-opacity=\"0\"></stop></radialGradient><linearGradient id=\"home-ai-frame-edge\" x1=\"60\" y1=\"60\" x2=\"180\" y2=\"180\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#c5edff\" stop-opacity=\".38\"></stop><stop offset=\".5\" stop-color=\"#80b8e4\" stop-opacity=\".12\"></stop><stop offset=\"1\" stop-color=\"#a9d5f8\" stop-opacity=\".25\"></stop></linearGradient></defs><circle cx=\"120\" cy=\"120\" r=\"119\" fill=\"url(#home-ai-atmosphere)\"></circle><g class=\"ai-core-substrate\"><rect x=\"60\" y=\"60\" width=\"120\" height=\"120\" rx=\"23\" fill=\"#5685ad\" fill-opacity=\".045\" stroke=\"url(#home-ai-frame-edge)\"></rect></g></svg>",
+      "width": 240,
+      "height": 240,
+      "classes": "ai-core-field"
+    },
+    {
+      "id": "svg_10",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"w-12\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 46,
+      "height": 22.34375,
+      "classes": "w-12"
+    },
+    {
+      "id": "svg_11",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg class=\"ai-module-indicator\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"m6 4 4 4-4 4\"></path></svg>",
+      "width": 12,
+      "height": 12,
+      "classes": "ai-module-indicator"
+    },
+    {
+      "id": "svg_12",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg class=\"ai-module-indicator\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"m6 4 4 4-4 4\"></path></svg>",
+      "width": 0,
+      "height": 0,
+      "classes": "ai-module-indicator"
+    },
+    {
+      "id": "svg_13",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg class=\"ai-module-indicator\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"m6 4 4 4-4 4\"></path></svg>",
+      "width": 0,
+      "height": 0,
+      "classes": "ai-module-indicator"
+    },
+    {
+      "id": "svg_14",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg class=\"ai-module-indicator\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"m6 4 4 4-4 4\"></path></svg>",
+      "width": 0,
+      "height": 0,
+      "classes": "ai-module-indicator"
+    },
+    {
+      "id": "svg_15",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg class=\"ai-module-indicator\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"m6 4 4 4-4 4\"></path></svg>",
+      "width": 0,
+      "height": 0,
+      "classes": "ai-module-indicator"
+    },
+    {
+      "id": "svg_16",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg class=\"ai-module-indicator\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"m6 4 4 4-4 4\"></path></svg>",
+      "width": 0,
+      "height": 0,
+      "classes": "ai-module-indicator"
+    },
+    {
+      "id": "svg_17",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg class=\"ai-module-indicator\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"m6 4 4 4-4 4\"></path></svg>",
+      "width": 0,
+      "height": 0,
+      "classes": "ai-module-indicator"
+    },
+    {
+      "id": "svg_18",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg class=\"ai-module-indicator\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"m6 4 4 4-4 4\"></path></svg>",
+      "width": 0,
+      "height": 0,
+      "classes": "ai-module-indicator"
+    },
+    {
+      "id": "svg_19",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"w-5 shrink-0\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 20,
+      "height": 9.71875,
+      "classes": "w-5 shrink-0"
+    },
+    {
+      "id": "svg_20",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"w-5 shrink-0\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 20,
+      "height": 9.71875,
+      "classes": "w-5 shrink-0"
+    },
+    {
+      "id": "svg_21",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"w-5 shrink-0\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 20,
+      "height": 9.71875,
+      "classes": "w-5 shrink-0"
+    },
+    {
+      "id": "svg_22",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" aria-hidden=\"true\"><rect x=\"4\" y=\"2.5\" width=\"12\" height=\"15\" rx=\"2\"></rect><path d=\"M7 7h6M7 10h6M7 13h3\"></path></svg>",
+      "width": 20,
+      "height": 20,
+      "classes": ""
+    },
+    {
+      "id": "svg_23",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"w-5 shrink-0\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 20,
+      "height": 9.71875,
+      "classes": "w-5 shrink-0"
+    },
+    {
+      "id": "svg_24",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" aria-hidden=\"true\"><rect x=\"4\" y=\"2.5\" width=\"12\" height=\"15\" rx=\"2\"></rect><path d=\"M7 7h6M7 10h6M7 13h3\"></path></svg>",
+      "width": 20,
+      "height": 20,
+      "classes": ""
+    },
+    {
+      "id": "svg_25",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"w-5 shrink-0\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 20,
+      "height": 9.71875,
+      "classes": "w-5 shrink-0"
+    },
+    {
+      "id": "svg_26",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" aria-hidden=\"true\"><rect x=\"4\" y=\"2.5\" width=\"12\" height=\"15\" rx=\"2\"></rect><path d=\"M7 7h6M7 10h6M7 13h3\"></path></svg>",
+      "width": 20,
+      "height": 20,
+      "classes": ""
+    },
+    {
+      "id": "svg_27",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"w-5 shrink-0\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 20,
+      "height": 9.71875,
+      "classes": "w-5 shrink-0"
+    },
+    {
+      "id": "svg_28",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" aria-hidden=\"true\"><rect x=\"4\" y=\"2.5\" width=\"12\" height=\"15\" rx=\"2\"></rect><path d=\"M7 7h6M7 10h6M7 13h3\"></path></svg>",
+      "width": 20,
+      "height": 20,
+      "classes": ""
+    },
+    {
+      "id": "svg_29",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"w-5 shrink-0\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 20,
+      "height": 9.71875,
+      "classes": "w-5 shrink-0"
+    },
+    {
+      "id": "svg_30",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" aria-hidden=\"true\"><rect x=\"4\" y=\"2.5\" width=\"12\" height=\"15\" rx=\"2\"></rect><path d=\"M7 7h6M7 10h6M7 13h3\"></path></svg>",
+      "width": 20,
+      "height": 20,
+      "classes": ""
+    },
+    {
+      "id": "svg_31",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 348.283 169.28\" class=\"w-5 shrink-0\" aria-hidden=\"true\"><path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M278.295 2.124 C314.048 4.797 339.755 26.658 345.17 61.098 C351.798 103.249 328.287 143.646 288.965 159.793 C276.162 165.095 262.957 167.302 248.741 167.28 L175.88 167.169 L135.836 74.727 L107.21 113.881 L67.781 167.222 L2 166.998 L121.671 2 L166.18 2.134 L217.617 123.406 L241.767 123.305 C250.567 123.268 258.188 120.761 265.933 116.589 C283.86 106.934 293.214 86.579 288.392 66.81 C286.323 58.33 280.333 52.076 272.447 48.866 C266.492 46.508 260.368 45.749 253.757 45.741 L199.092 45.681 L181.172 2.082 L278.295 2.124 Z\"></path></svg>",
+      "width": 20,
+      "height": 9.71875,
+      "classes": "w-5 shrink-0"
+    },
+    {
+      "id": "svg_32",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" aria-hidden=\"true\"><rect x=\"4\" y=\"2.5\" width=\"12\" height=\"15\" rx=\"2\"></rect><path d=\"M7 7h6M7 10h6M7 13h3\"></path></svg>",
+      "width": 20,
+      "height": 20,
+      "classes": ""
+    },
+    {
+      "id": "svg_33",
+      "context": "section#ai.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"m10 2 6 2v5c0 4-6 8-6 8s-6-4-6-8V4z\"></path><path d=\"m7 9 2 2 4-4\"></path></svg>",
+      "width": 16,
+      "height": 19,
+      "classes": ""
+    },
+    {
+      "id": "svg_34",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_35",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_36",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_37",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_38",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_39",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_40",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_41",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_42",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_43",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_44",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_45",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_46",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_47",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_48",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_49",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_50",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_51",
+      "context": "section#faq.px-4",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-3.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_52",
+      "context": "a.mt-1",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"size-4\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"></rect><path d=\"m3.5 7.5 8.5 6 8.5-6\"></path></svg>",
+      "width": 16,
+      "height": 16,
+      "classes": "size-4"
+    },
+    {
+      "id": "svg_53",
+      "context": "a.inline-flex",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"size-4\"><path d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z\"></path></svg>",
+      "width": 16,
+      "height": 16,
+      "classes": "size-4"
+    },
+    {
+      "id": "svg_54",
+      "context": "a.grid",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-4\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z\"></path></svg>",
+      "width": 16,
+      "height": 16,
+      "classes": "size-4"
+    },
+    {
+      "id": "svg_55",
+      "context": "a.grid",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" class=\"size-4\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z\"></path></svg>",
+      "width": 16,
+      "height": 16,
+      "classes": "size-4"
+    },
+    {
+      "id": "svg_56",
+      "context": "a.inline-flex",
+      "outerHTML": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"size-3.5\"><circle cx=\"12\" cy=\"12\" r=\"9\"></circle><path d=\"M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z\"></path></svg>",
+      "width": 14,
+      "height": 14,
+      "classes": "size-3.5"
+    },
+    {
+      "id": "svg_57",
+      "context": "button.fixed",
+      "outerHTML": "<svg class=\"h-5 w-5\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"></path></svg>",
+      "width": 20,
+      "height": 20,
+      "classes": "h-5 w-5"
+    }
+  ],
+  "videos": [],
+  "sections": [
+    {
+      "type": "Header / Navigation",
+      "tag": "header",
+      "id": "",
+      "className": "site-header group/header sticky top-0 z-50 border-b border-border bg-background/92 backdrop-blur-[10px]",
+      "layout": {
+        "display": "block",
+        "position": "sticky",
+        "justifyContent": "normal",
+        "alignItems": "normal",
+        "padding": "0px 0px 0px 0px",
+        "width": 1440,
+        "height": 69,
+        "sticky": true
+      },
+      "styles": {
+        "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.92)",
+        "backdropFilter": "blur(10px)",
+        "borderBottom": "1px solid rgb(227, 234, 239)"
+      },
+      "contentSummary": {
+        "navItems": [
+          "Features",
+          "Features",
+          "Pricing",
+          "Resources",
+          "Blog",
+          "Contact",
+          "Log in",
+          "Start free trial\n→",
+          "Menu",
+          "Features",
+          "Pricing",
+          "Resources",
+          "Blog",
+          "Contact",
+          "Inventory ManagementAdd cars, track costs and keep every vehicle detail in one place.",
+          "Photos, Studio & 360Order photos, choose a studio background and build a 360 view.",
+          "Dealer Website BuilderPublish your inventory on a website built for shopper inquiries.",
+          "AI AgentsA salesman for your shoppers and an operator for your staff.",
+          "CRM & LeadsKeep inquiries, customer history and follow-ups in one place.",
+          "Deals, F&I & E-SignCalculate the figures, prepare documents and collect signatures.",
+          "Inventory SyndicationList your cars on the sites and ad programs shoppers use.",
+          "Recon & Work OrdersAssign repair jobs, follow deadlines and record preparation costs.",
+          "Payment ProcessingGet paid by card or bank account on deals, loans and invoices.",
+          "Books & AccountingKeep your books in AutoDealer.io, or connect QuickBooks Online.",
+          "Buy Here Pay HereSet up in-house loans and track payments, balances and collections.",
+          "Floor PlanTrack inventory financing, payment dates and vehicle payoff records.",
+          "Reporting & InsightsSee sales, inventory age, lead sources and vehicle margins.",
+          "Titles & DMVTrack outstanding title work, deadlines and supporting forms.",
+          "Compliance, Built InKeep deal checks and their supporting records in one place.",
+          "Proactive AI BriefingsReceive briefings and review supported actions from your phone.",
+          "Security & ControlSet staff access, protect sensitive information and track changes.",
+          "Explore all features →",
+          "Log in",
+          "Start free trial"
+        ],
+        "text": "Features Pricing Resources Blog Contact Log in Start free trial →"
+      }
+    },
+    {
+      "type": "Section 1: The AI-Native Dealer Management System",
+      "tag": "div",
+      "id": "",
+      "className": "",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "The AI-Native Dealer Management System"
+        },
+        {
+          "level": "h2",
+          "text": "WORKS WITH THE AUCTION FILES, HISTORY REPORT LINKS, LISTING SITES, AD PROGRAMS AND ACCOUNTS YOUR DEALERSHIP ALREADY USES"
+        },
+        {
+          "level": "h2",
+          "text": "One record follows every car, from purchase to payment."
+        },
+        {
+          "level": "h2",
+          "text": "Run your dealership's day-to-day work from one system."
+        },
+        {
+          "level": "h3",
+          "text": "From stock to sale"
+        },
+        {
+          "level": "h3",
+          "text": "Money & performance"
+        },
+        {
+          "level": "h3",
+          "text": "Everyday operations"
+        },
+        {
+          "level": "h2",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h2",
+          "text": ""
+        },
+        {
+          "level": "h2",
+          "text": ""
+        },
+        {
+          "level": "h2",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h2",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h3",
+          "text": ""
+        },
+        {
+          "level": "h2",
+          "text": ""
+        },
+        {
+          "level": "h2",
+          "text": ""
+        }
+      ],
+      "ctas": [
+        "Start free trial\n→",
+        "See what it does",
+        "Add from photos →",
+        "Inventory →",
+        "Website builder →",
+        "CRM and leads →"
+      ],
+      "mediaCounts": {
+        "imgCount": 70,
+        "svgCount": 49,
+        "videoCount": 0
+      },
+      "layout": {
+        "display": "block",
+        "flexDirection": "row",
+        "gridTemplateColumns": "none",
+        "padding": "0px 0px 0px 0px",
+        "maxWidth": "none",
+        "width": 1440,
+        "height": 10839.46875
+      },
+      "styles": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "none",
+        "borderRadius": "0px",
+        "border": "0px solid rgb(227, 234, 239)"
+      },
+      "textPreview": "BUILT FOR INDEPENDENT USED-CAR DEALERS The AI-Native Dealer Management System Run the whole lot from one system. Inventory, website, CRM, deals, payments, BHPH and books, with an AI assistant that prepares the work and waits for your approval. Start free trial → See what it does 14-day trial. Nothing is charged until it ends. English and Spanish. Northgate Motors AI Home Dashboard Reports Inventor",
+      "sampleCards": [
+        {
+          "tag": "div",
+          "className": "mx-auto w-full max-w-page relative grid items-center gap-x-7",
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "0px solid rgba(255, 255, 255, 0.12)",
+          "borderRadius": "0px",
+          "textSample": "BUILT FOR INDEPENDENT USED-CAR DEALERS The AI-Native Dealer Management System R"
+        },
+        {
+          "tag": "div",
+          "className": "story-rise flex flex-col gap-5 lg:pr-4",
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "0px solid rgba(255, 255, 255, 0.12)",
+          "borderRadius": "0px",
+          "textSample": "BUILT FOR INDEPENDENT USED-CAR DEALERS The AI-Native Dealer Management System R"
+        },
+        {
+          "tag": "div",
+          "className": "flex flex-wrap items-center gap-3",
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "0px solid rgba(255, 255, 255, 0.12)",
+          "borderRadius": "0px",
+          "textSample": "Start free trial → See what it does"
+        },
+        {
+          "tag": "a",
+          "className": "inline-flex items-center justify-center gap-2 whitespace-now",
+          "bg": "#0e6bfd",
+          "border": "0px solid rgba(255, 255, 255, 0.12)",
+          "borderRadius": "7px",
+          "textSample": "Start free trial →"
+        }
+      ]
+    },
+    {
+      "type": "Footer",
+      "tag": "footer",
+      "id": "site-footer",
+      "className": "site-footer dark bg-muted px-4 pt-14 pb-24 sm:px-6 lg:pt-[4.5rem]",
+      "layout": {
+        "display": "block",
+        "gridTemplateColumns": "none",
+        "padding": "72px 24px 96px 24px",
+        "width": 1440,
+        "height": 907.1875
+      },
+      "styles": {
+        "backgroundColor": "#0f2330",
+        "borderTop": "0px solid rgba(255, 255, 255, 0.12)"
+      },
+      "textPreview": "Dealer management software with AI built in. Inventory, website, customers, deals and books, with an AI assistant that prepares the work and waits for your approval. Built for independent used-car dealers. All features Pricing Start free trial Log in AutoDealer.io LLC 1260 S Ronald Reagan Blvd Longwood, FL 32750 info@autodealer.io (407) 409-8383 PRODUCT Inventory & operations Dealer management sys",
+      "links": [
+        "All features",
+        "Pricing",
+        "Start free trial",
+        "Log in",
+        "info@autodealer.io",
+        "(407) 409-8383",
+        "Dealer management system",
+        "Inventory management",
+        "Inventory syndication",
+        "CARFAX integration",
+        "Car photo editor",
+        "Reconditioning",
+        "Floor plan management",
+        "Dealer websites",
+        "CRM & leads",
+        "AI assistants",
+        "Proactive AI briefings",
+        "Deals & F&I",
+        "Payment processing",
+        "Buy here pay here"
+      ]
+    }
+  ]
+}

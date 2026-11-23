@@ -1,0 +1,355 @@
+{
+  "desktopMetrics": {
+    "production": {
+      "label": "Production (https://autodealer.io)",
+      "header": {
+        "name": "Header / Navigation",
+        "selector": "header",
+        "height": 69,
+        "width": 1440,
+        "bg": "oklab(0.999994 0.0000455678 0.0000200868 / 0.92)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "0px",
+        "heading": "",
+        "buttonsCount": 21,
+        "buttons": [
+          "Features",
+          "Start free trial\n→",
+          "Inventory ManagementAdd cars, track costs and keep every vehicle detail in one place.",
+          "Photos, Studio & 360Order photos, choose a studio background and build a 360 view."
+        ]
+      },
+      "hero": {
+        "name": "Hero Section",
+        "selector": "section:first-of-type, .story",
+        "height": 880,
+        "width": 1440,
+        "bg": "rgb(18, 42, 56)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "0px",
+        "heading": "The AI-Native Dealer Management System",
+        "buttonsCount": 2,
+        "buttons": [
+          "Start free trial\n→",
+          "See what it does"
+        ]
+      },
+      "marquee": {
+        "name": "Ecosystem Marquee",
+        "selector": "section:nth-of-type(2), #connections",
+        "height": 553,
+        "width": 1440,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "56px 24px",
+        "heading": "WORKS WITH THE AUCTION FILES, HISTORY REPORT LINKS, LISTING SITES, AD PROGRAMS AND ACCOUNTS YOUR DEALERSHIP ALREADY USES",
+        "buttonsCount": 1,
+        "buttons": [
+          "See every connection →"
+        ]
+      },
+      "workflow": {
+        "name": "Unified Workflow",
+        "selector": "#whole-sale",
+        "height": 737,
+        "width": 1440,
+        "bg": "rgb(243, 246, 248)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "One record follows every car, from purchase to payment.",
+        "buttonsCount": 7,
+        "buttons": [
+          "1\nBuy and prep\nAdd cars by VIN, photo or auction file, then track recon and every cost.",
+          "2\nList\nPublish to your website and the listing sites shoppers use.",
+          "3\nSell\nEvery inquiry lands in your CRM with its source and the car.",
+          "4\nClose\nFigures, forms, e-signatures and title work on the deal."
+        ]
+      },
+      "platform": {
+        "name": "Platform Scope",
+        "selector": "#platform",
+        "height": 1835,
+        "width": 1440,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "Run your dealership's day-to-day work from one system.",
+        "buttonsCount": 0,
+        "buttons": []
+      },
+      "ai": {
+        "name": "AI Assistant Showcase",
+        "selector": "#ai",
+        "height": 1375,
+        "width": 1440,
+        "bg": "rgb(13, 31, 43)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "96px 24px",
+        "heading": "",
+        "buttonsCount": 0,
+        "buttons": []
+      },
+      "studio": {
+        "name": "Photo Studio Showcase",
+        "selector": "#studio",
+        "height": 452,
+        "width": 1440,
+        "bg": "rgb(243, 246, 248)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "",
+        "buttonsCount": 0,
+        "buttons": []
+      },
+      "connections": {
+        "name": "Connections Showcase",
+        "selector": "#connections",
+        "height": 840,
+        "width": 1440,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "",
+        "buttonsCount": 0,
+        "buttons": []
+      },
+      "value": {
+        "name": "Pricing & Value Checklist",
+        "selector": "#value",
+        "height": 1376,
+        "width": 1440,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "",
+        "buttonsCount": 0,
+        "buttons": []
+      },
+      "faq": {
+        "name": "FAQ Section",
+        "selector": "#faq",
+        "height": 1698,
+        "width": 1440,
+        "bg": "rgb(243, 246, 248)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "",
+        "buttonsCount": 0,
+        "buttons": []
+      },
+      "freeTools": {
+        "name": "Free Tools",
+        "selector": "#free-tools",
+        "height": 668,
+        "width": 1440,
+        "bg": "rgb(243, 246, 248)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "56px 24px",
+        "heading": "",
+        "buttonsCount": 0,
+        "buttons": []
+      },
+      "footer": {
+        "name": "Footer",
+        "selector": "footer, #site-footer",
+        "height": 907,
+        "width": 1440,
+        "bg": "rgb(15, 35, 48)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "72px 24px 96px",
+        "heading": "PRODUCT",
+        "buttonsCount": 0,
+        "buttons": []
+      }
+    },
+    "local": {
+      "label": "Local (http://localhost:3000)",
+      "header": {
+        "name": "Header / Navigation",
+        "selector": "header",
+        "height": 70,
+        "width": 1440,
+        "bg": "oklab(0.999994 0.0000455678 0.0000200868 / 0.92)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "0px",
+        "heading": "",
+        "buttonsCount": 3,
+        "buttons": [
+          "Features",
+          "Start free trial",
+          "Trial"
+        ]
+      },
+      "hero": {
+        "name": "Hero Section",
+        "selector": "section:first-of-type, .story",
+        "height": 730,
+        "width": 1440,
+        "bg": "rgb(18, 42, 56)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "96px 0px 128px",
+        "heading": "The AI-Native Dealer Management System",
+        "buttonsCount": 6,
+        "buttons": [
+          "Start free trial",
+          "See what it does",
+          "01 Photo & Recon",
+          "02 Inventory & Gross"
+        ]
+      },
+      "marquee": {
+        "name": "Ecosystem Marquee",
+        "selector": "section:nth-of-type(2), #connections",
+        "height": 572,
+        "width": 1440,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "56px 24px",
+        "heading": "",
+        "buttonsCount": 0,
+        "buttons": []
+      },
+      "workflow": {
+        "name": "Unified Workflow",
+        "selector": "#whole-sale",
+        "height": 954,
+        "width": 1440,
+        "bg": "rgb(243, 246, 248)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "One record follows every car, from purchase to payment.",
+        "buttonsCount": 6,
+        "buttons": [
+          "01\nBuy and prep\nAdd cars & track costs",
+          "02\nPhoto studio\nAI background removal",
+          "03\nList and syndicate\nInstant web & feeds",
+          "04\nLeads & inquiries\nAI salesman response"
+        ]
+      },
+      "platform": {
+        "name": "Platform Scope",
+        "selector": "#platform",
+        "height": 2752,
+        "width": 1440,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "Run your dealership's day-to-day work from one system.",
+        "buttonsCount": 1,
+        "buttons": [
+          "Start 14-day free trial"
+        ]
+      },
+      "ai": {
+        "name": "AI Assistant Showcase",
+        "selector": "#ai",
+        "height": 1335,
+        "width": 1440,
+        "bg": "rgb(13, 31, 43)",
+        "color": "rgb(255, 255, 255)",
+        "padding": "96px 24px",
+        "heading": "Your dealership, connected to one AI assistant.",
+        "buttonsCount": 11,
+        "buttons": [
+          "Pause animation",
+          "Inventory",
+          "Website",
+          "Leads"
+        ]
+      },
+      "studio": {
+        "name": "Photo Studio Showcase",
+        "selector": "#studio",
+        "height": 900,
+        "width": 1440,
+        "bg": "rgb(243, 246, 248)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "Your inventory. Shown at its best.",
+        "buttonsCount": 7,
+        "buttons": [
+          "Explore the photo editor",
+          "Original Lot",
+          "AI Studio",
+          "045°"
+        ]
+      },
+      "connections": {
+        "name": "Connections Showcase",
+        "selector": "#connections",
+        "height": 1011,
+        "width": 1440,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "Keep the connections you rely on.",
+        "buttonsCount": 0,
+        "buttons": []
+      },
+      "value": {
+        "name": "Pricing & Value Checklist",
+        "selector": "#value",
+        "height": 1142,
+        "width": 1440,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "Enterprise-class software, priced for independent dealers.",
+        "buttonsCount": 2,
+        "buttons": [
+          "See every plan and price",
+          "Start 14-day free trial"
+        ]
+      },
+      "faq": {
+        "name": "FAQ Section",
+        "selector": "#faq",
+        "height": 2111,
+        "width": 1440,
+        "bg": "rgb(243, 246, 248)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "96px 24px",
+        "heading": "Before you make the move.",
+        "buttonsCount": 24,
+        "buttons": [
+          "All",
+          "Getting started",
+          "The AI",
+          "Website"
+        ]
+      },
+      "freeTools": {
+        "name": "Free Tools",
+        "selector": "#free-tools",
+        "height": 731,
+        "width": 1440,
+        "bg": "rgb(243, 246, 248)",
+        "color": "rgb(22, 48, 63)",
+        "padding": "64px 24px",
+        "heading": "Try a tool before you sign up.",
+        "buttonsCount": 6,
+        "buttons": [
+          "Auto loan payment calculator\n\nEstimate a monthly car payment from price, down payment, trade-in equity, APR & loan term.\n\nOpen calculator",
+          "Out-the-door price calculator\n\nCalculate the exact out-the-door buyer price with state tax, dealer doc fees, title & registration.\n\nOpen calculator",
+          "VIN decoder & recall check\n\nDecode vehicle specs, engine, transmission, trim levels, and check NHTSA open safety recalls.\n\nOpen calculator",
+          "Window sticker lookup\n\nRetrieve original MSRP, factory option packages, and EPA fuel economy estimates by VIN.\n\nOpen calculator"
+        ]
+      },
+      "footer": {
+        "name": "Footer",
+        "selector": "footer, #site-footer",
+        "height": 497,
+        "width": 1440,
+        "bg": "rgb(15, 35, 48)",
+        "color": "rgb(198, 214, 225)",
+        "padding": "64px 0px 80px",
+        "heading": "",
+        "buttonsCount": 2,
+        "buttons": [
+          "EN",
+          "ES"
+        ]
+      }
+    }
+  }
+}
