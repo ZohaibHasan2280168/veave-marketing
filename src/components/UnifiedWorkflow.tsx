@@ -1,458 +1,288 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Globe,
+  Briefcase,
+  LayoutGrid,
+  DollarSign,
+  Check,
+  Pause,
+  Play,
+} from "lucide-react";
+import { WORKFLOW_STAGES } from "@/data/veaveData";
+import WorkflowStageVisual from "@/components/visuals/WorkflowVisuals";
 
-interface WorkflowStep {
-  id: string;
-  stepNum: string;
-  stepIndex: number;
-  title: string;
-  tagline: string;
-  headerTag: string;
-  badgeLabel: string;
-  activeHeadline: string;
-  description: string;
-  screenshot: string;
-  alt: string;
-}
-
-const steps: WorkflowStep[] = [
-  {
-    id: "intake",
-    stepNum: "1",
-    stepIndex: 1,
-    title: "Order Intake",
-    tagline: "Capture order & item specs",
-    headerTag: "01. Order Intake",
-    badgeLabel: "Step 1 of 6",
-    activeHeadline: "Capture requirements instantly",
-    description:
-      "Integrate digital purchase orders and product specifications immediately into live production schedules. Track materials, parts, and customer approvals in one centralized view.",
-    screenshot: "/assets/veave/workflows/dashboard-orderintake.jpg",
-    alt: "Veave Order Intake Dashboard",
-  },
-  {
-    id: "cutting",
-    stepNum: "2",
-    stepIndex: 2,
-    title: "Design & Prep",
-    tagline: "Precision planning & setup",
-    headerTag: "02. Design & Prep",
-    badgeLabel: "Step 2 of 6",
-    activeHeadline: "Automate specifications & staging yields",
-    description:
-      "Convert digital CAD designs, technical blueprints, and specifications directly into production staging. Maximize material yield and upload photographic proof of staged components.",
-    screenshot: "/assets/veave/dept_head/operations_checkpoints.png",
-    alt: "Veave Design & Engineering Department Operations",
-  },
-  {
-    id: "stitching",
-    stepNum: "3",
-    stepIndex: 3,
-    title: "Assembly & Production",
-    tagline: "Live throughput monitoring",
-    headerTag: "03. Assembly & Production",
-    badgeLabel: "Step 3 of 6",
-    activeHeadline: "Track assembly line throughput in real time",
-    description:
-      "Supervisors monitor line balancing cycle times, unit throughput, and operator station progression with instant bottleneck detection across all active lines.",
-    screenshot: "/assets/veave/dept_head/dept_head_dashboard.png",
-    alt: "Veave Production Assembly Dashboard",
-  },
-  {
-    id: "qc",
-    stepNum: "4",
-    stepIndex: 4,
-    title: "Quality Control",
-    tagline: "Guarantee 100% pass",
-    headerTag: "04. Quality Control",
-    badgeLabel: "Step 4 of 6",
-    activeHeadline: "Strict quality inspection & defect tagging",
-    description:
-      "Inspectors audit tolerances, dimensions, and build symmetry. Log pass/fail criteria and attach high-res defect notes before batches advance.",
-    screenshot: "/assets/veave/qc/qc_dashboard.png",
-    alt: "Veave Quality Control Inspection Suite",
-  },
-  {
-    id: "packaging",
-    stepNum: "5",
-    stepIndex: 5,
-    title: "Finishing & Packaging",
-    tagline: "Custom tags & bundling",
-    headerTag: "05. Finishing & Packaging",
-    badgeLabel: "Step 5 of 6",
-    activeHeadline: "Industrial finishing, labeling & packaging",
-    description:
-      "Products undergo final surface finishing, safety inspections, custom branded labeling, barcode scanning, and protective batch bundling.",
-    screenshot: "/assets/veave/admin/order_details.png",
-    alt: "Veave Finishing & Packaging Ledger",
-  },
-  {
-    id: "dispatch",
-    stepNum: "6",
-    stepIndex: 6,
-    title: "Dispatch & Delivery",
-    tagline: "Fleet tracking & delivery",
-    headerTag: "06. Dispatch & Delivery",
-    badgeLabel: "Step 6 of 6",
-    activeHeadline: "Generate shipping manifests & tracking",
-    description:
-      "Create regulatory-compliant shipping manifests, carton barcode labels, and automated dispatch tracking notifications for global retail and B2B buyers.",
-    screenshot: "/assets/veave/admin/admin_dashboard.png",
-    alt: "Veave Global Dispatch & Shipment Command",
-  },
-];
-
-const AUTOPLAY_INTERVAL = 4800; // 4.8 seconds per step (4-5 sec duration to comfortably read)
+const STAGE_ICONS = [Globe, Briefcase, LayoutGrid, DollarSign];
+const AUTOPLAY_MS = 5400;
 
 export default function UnifiedWorkflow() {
-  const [activeStepIndex, setActiveStepIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
-  const activeStep = steps[activeStepIndex];
+  const activeStage = WORKFLOW_STAGES[activeIndex] || WORKFLOW_STAGES[0];
 
-  // Auto-advance callback
-  const handleNextStep = useCallback(() => {
-    setActiveStepIndex((prev) => (prev + 1) % steps.length);
+  const handleNext = useCallback(() => {
+    setActiveIndex((prev) => (prev + 1) % WORKFLOW_STAGES.length);
   }, []);
 
-  // Auto-rotate left to right every ~4.8 seconds unless paused by user interaction
   useEffect(() => {
     if (isPaused) return;
-
-    const timer = setInterval(() => {
-      handleNextStep();
-    }, AUTOPLAY_INTERVAL);
-
+    const timer = setInterval(handleNext, AUTOPLAY_MS);
     return () => clearInterval(timer);
-  }, [isPaused, handleNextStep, activeStepIndex]);
+  }, [isPaused, handleNext, activeIndex]);
+
+  const progressPct =
+    WORKFLOW_STAGES.length > 1 ? (activeIndex / (WORKFLOW_STAGES.length - 1)) * 100 : 0;
 
   return (
     <section
       id="workflow"
-      className="bg-gradient-to-tr from-slate-50 via-white to-slate-50 border-y border-slate-100/80 relative overflow-hidden"
+      className="relative bg-[#f4f7fa] border-b border-[#e2e9ef] py-16 lg:py-24 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 lg:py-8">
-        
-        {/* Part 1: The Header & Value Proposition */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-3 mb-5 sm:mb-5">
-          {/* Left Column */}
-          <div className="flex flex-col items-start">
-            <span className="text-[11px] font-bold text-blue-600 tracking-wider uppercase mb-1">
-              THE PRODUCTION PIPELINE
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold text-slate-900 leading-tight tracking-tight">
-              One unified workflow, from order to dispatch.
-            </h2>
-          </div>
+      <div className="pointer-events-none absolute inset-0 bg-grid-light opacity-60" aria-hidden="true" />
 
-          {/* Right Column */}
-          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed lg:max-w-sm">
-            Streamline your entire production lifecycle. Each step carries exact data forward
-            seamlessly, so you&apos;re always tracking live progress.
-          </p>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Section Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-7"
+          >
+            <div className="font-mono text-xs text-[#0e6bfd] mb-2">
+              End-to-end business lifecycle
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.02em] text-[#132938] leading-[1.12]">
+              One record follows every customer from inquiry to payment
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+            className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between gap-3"
+          >
+            <p className="text-[15px] text-[#556d7d] leading-relaxed">
+              Your storefront website, buyer CRM, Google Meet calendar, order pipeline, and financial
+              records share one database. Enter a lead or quote once and every downstream workspace
+              updates automatically.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Part 2: The Horizontal Process Timeline (6-Steps with Left-to-Right Animation) */}
-        <div 
-          className="relative mb-5 sm:mb-5"
+        {/* Restored Animated Horizontal Process Timeline */}
+        <div
+          className="relative mb-8"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Base Continuous Connector Track Line */}
           <div
-            className="hidden lg:block absolute top-[28px] left-[5%] right-[5%] h-[2px] bg-slate-200 z-0 pointer-events-none"
+            className="hidden lg:block absolute top-[30px] left-[12%] right-[12%] h-[2px] bg-[#d5dfe7] z-0 pointer-events-none"
             aria-hidden="true"
           />
 
-          {/* Animated Active Connector Line (Progresses Left to Right) */}
-          <div className="hidden lg:block absolute top-[28px] left-[5%] right-[5%] h-[2px] z-0 pointer-events-none">
+          {/* Animated Active Connector Beam (Progresses Left to Right) */}
+          <div className="hidden lg:block absolute top-[30px] left-[12%] right-[12%] h-[2px] z-0 pointer-events-none">
             <motion.div
-              className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
+              className="h-full bg-[#0e6bfd] rounded-full shadow-[0_0_12px_rgba(14,107,253,0.45)]"
               initial={false}
-              animate={{
-                width: `${(activeStepIndex / (steps.length - 1)) * 100}%`,
-              }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              animate={{ width: `${progressPct}%` }}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
             />
           </div>
 
-          {/* 6 Steps Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-2.5 relative z-10">
-            {steps.map((step, index) => {
-              const isActive = index === activeStepIndex;
+          {/* 4 Interactive Stage Nodes */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+            {WORKFLOW_STAGES.map((stage, idx) => {
+              const Icon = STAGE_ICONS[idx % STAGE_ICONS.length];
+              const isSelected = idx === activeIndex;
+              const isPassed = idx < activeIndex;
+
               return (
                 <button
-                  key={step.id}
+                  key={stage.slug}
                   type="button"
-                  onClick={() => {
-                    setActiveStepIndex(index);
-                  }}
-                  className="group flex flex-col items-center text-center cursor-pointer focus:outline-hidden"
+                  onClick={() => setActiveIndex(idx)}
+                  className="group flex flex-col items-start lg:items-center text-left lg:text-center cursor-pointer focus:outline-hidden"
                 >
-                  {/* Icon Card - Compact with animated shift & lift */}
+                  {/* Animated Icon Tile */}
                   <motion.div
                     animate={{
-                      scale: isActive ? 1.08 : 1,
-                      y: isActive ? -3 : 0,
+                      y: isSelected ? -4 : 0,
+                      scale: isSelected ? 1.05 : 1,
                     }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                    className={`w-[50px] h-[50px] sm:w-[58px] sm:h-[58px] rounded-xl sm:rounded-2xl flex items-center justify-center relative transition-colors duration-200 ${
-                      isActive
-                        ? "bg-white border-2 border-blue-600 shadow-[0_12px_28px_rgba(14,107,253,0.22)] ring-4 ring-blue-500/15"
-                        : "bg-white border border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.04)] hover:border-blue-300 hover:shadow-md"
+                    transition={{ type: "spring", stiffness: 320, damping: 24 }}
+                    className={`relative flex size-[60px] items-center justify-center rounded-2xl border transition-colors ${
+                      isSelected
+                        ? "bg-[#0e2230] border-[#0e6bfd] text-white shadow-[0_14px_28px_-6px_rgba(14,107,253,0.38)]"
+                        : isPassed
+                          ? "bg-white border-[#0e6bfd]/40 text-[#0e6bfd] shadow-xs"
+                          : "bg-white border-[#d5dfe7] text-[#556d7d] group-hover:border-[#0e6bfd]/50 group-hover:text-[#0e6bfd]"
                     }`}
                   >
-                    {/* Animated Step Highlight Glow */}
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeTimelineGlow"
-                        className="absolute -inset-1 rounded-2xl bg-blue-500/20 -z-10 blur-[2px]"
-                        transition={{ type: "spring", stiffness: 320, damping: 28 }}
+                    {isSelected && (
+                      <motion.span
+                        layoutId="workflowNodeRing"
+                        transition={{ type: "spring", stiffness: 320, damping: 26 }}
+                        className="absolute -inset-1.5 rounded-[20px] border-2 border-[#0e6bfd]/30 pointer-events-none"
                       />
                     )}
-
-                    {/* Step SVG Icon */}
-                    {step.id === "intake" && (
-                      <svg
-                        className={`w-5 h-5 sm:w-5.5 sm:h-5.5 transition-colors ${
-                          isActive ? "text-blue-600" : "text-blue-500/80 group-hover:text-blue-600"
-                        }`}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.75"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
-                        <path d="M9 12h6" />
-                        <path d="M9 16h6" />
-                        <path d="M9 8h6" />
-                      </svg>
-                    )}
-
-                    {step.id === "cutting" && (
-                      <svg
-                        className={`w-5 h-5 sm:w-5.5 sm:h-5.5 transition-colors ${
-                          isActive ? "text-blue-600" : "text-blue-500/80 group-hover:text-blue-600"
-                        }`}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.75"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <rect x="3" y="3" width="13" height="15" rx="1.5" strokeDasharray="2.5 2.5" />
-                        <circle cx="15.5" cy="18.5" r="2.5" />
-                        <circle cx="19.5" cy="14.5" r="2.5" />
-                        <path d="M14 16.5l4-5" />
-                        <path d="M17.5 13l-5.5-5.5" />
-                      </svg>
-                    )}
-
-                    {step.id === "stitching" && (
-                      <svg
-                        className={`w-5 h-5 sm:w-5.5 sm:h-5.5 transition-colors ${
-                          isActive ? "text-blue-600" : "text-blue-500/80 group-hover:text-blue-600"
-                        }`}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.75"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M3 19h18" strokeWidth="2" />
-                        <path d="M5 19V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v12" />
-                        <path d="M19 11h-7a2 2 0 0 0-2 2v2" />
-                        <path d="M10 16v3" />
-                        <circle cx="16" cy="9" r="1.5" fill="currentColor" />
-                      </svg>
-                    )}
-
-                    {step.id === "qc" && (
-                      <svg
-                        className={`w-5 h-5 sm:w-5.5 sm:h-5.5 transition-colors ${
-                          isActive ? "text-blue-600" : "text-blue-500/80 group-hover:text-blue-600"
-                        }`}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.75"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M14 3a2 2 0 0 1-4 0H5l-3 4 3 2v10a1 1 0 0 0 1 1h7" />
-                        <path d="M19 7l3-4h-5" />
-                        <circle cx="16" cy="15" r="4.5" strokeWidth="2" />
-                        <path d="M19.5 18.5l3 3" strokeWidth="2" />
-                        <path d="M14.5 15l1 1 2-2" strokeWidth="1.75" />
-                      </svg>
-                    )}
-
-                    {step.id === "packaging" && (
-                      <svg
-                        className={`w-5 h-5 sm:w-5.5 sm:h-5.5 transition-colors ${
-                          isActive ? "text-blue-600" : "text-blue-500/80 group-hover:text-blue-600"
-                        }`}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.75"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
-                        <path d="m3.3 7 8.7 5 8.7-5" />
-                        <path d="M12 22V12" />
-                        <path d="m8 5 8 4" strokeWidth="1.5" />
-                      </svg>
-                    )}
-
-                    {step.id === "dispatch" && (
-                      <svg
-                        className={`w-5 h-5 sm:w-5.5 sm:h-5.5 transition-colors ${
-                          isActive ? "text-blue-600" : "text-blue-500/80 group-hover:text-blue-600"
-                        }`}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.75"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M10 17h4V5H2v12h3" />
-                        <path d="M20 17h2v-3.34a2 2 0 0 0-.59-1.42L18.4 9.24A2 2 0 0 0 17 8.66H14V17h1" />
-                        <circle cx="7.5" cy="17.5" r="2.5" />
-                        <circle cx="17.5" cy="17.5" r="2.5" />
-                        <path d="M14 9h3.5l2.5 3H14" />
-                      </svg>
-                    )}
-
-                    {/* Circular Blue Badge (1 to 6) */}
-                    <span className="absolute -top-1.5 -right-1.5 size-5 sm:size-5 rounded-full bg-blue-600 text-white font-bold text-[10px] flex items-center justify-center ring-2 ring-white shadow-sm">
-                      {step.stepNum}
+                    <Icon className="size-6 stroke-[1.5]" />
+                    <span
+                      className={`absolute -top-2 -right-2 flex size-6 items-center justify-center rounded-full font-mono text-[10px] font-semibold ring-2 ring-[#f4f7fa] tabular-nums ${
+                        isSelected || isPassed
+                          ? "bg-[#0e6bfd] text-white"
+                          : "bg-[#132938] text-white"
+                      }`}
+                    >
+                      {stage.stepNumber}
                     </span>
                   </motion.div>
 
-                  {/* Step Titles */}
-                  <span
-                    className={`text-xs sm:text-[13px] font-bold mt-1.5 text-center leading-tight transition-colors ${
-                      isActive ? "text-blue-600" : "text-slate-900 group-hover:text-blue-600"
-                    }`}
-                  >
-                    {step.title}
-                  </span>
-                  <span className="text-[10px] text-slate-500 max-w-[110px] text-center mt-0.5 leading-tight">
-                    {step.tagline}
-                  </span>
+                  <div className="mt-3.5 max-w-[230px]">
+                    <div
+                      className={`text-sm font-semibold leading-snug transition-colors ${
+                        isSelected ? "text-[#0e6bfd]" : "text-[#132938] group-hover:text-[#0e6bfd]"
+                      }`}
+                    >
+                      {stage.title}
+                    </div>
+                    <div className="text-xs text-[#556d7d] mt-1 leading-relaxed">
+                      {stage.shortDesc}
+                    </div>
+                  </div>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* Part 3: The Detailed Active Workflow Box (Hero Dark Navy Theme with White Dashboard Pic) */}
-        <div 
+        {/* Dark Architectural Active Stage Showcase Box (Restored high-contrast rhythm) */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5 }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="relative rounded-2xl sm:rounded-3xl bg-[#122a38] border border-white/10 shadow-[0_20px_50px_rgba(18,42,56,0.32)] p-4 sm:p-5 lg:p-6 overflow-hidden"
+          className="relative rounded-2xl sm:rounded-3xl bg-[#0e2230] border border-white/[0.12] p-6 sm:p-8 lg:p-10 shadow-[0_28px_64px_-16px_rgba(9,24,35,0.45)] overflow-hidden"
         >
-          {/* Subtle Ambient Radial Glows (matching Hero section theme) */}
-          <div className="pointer-events-none absolute -top-24 -left-24 w-80 h-80 rounded-full bg-[#0e6bfd]/20 blur-[90px]" />
-          <div className="pointer-events-none absolute -bottom-24 right-1/3 w-80 h-80 rounded-full bg-[#0e6bfd]/15 blur-[90px]" />
+          {/* Crisp Top Edge Highlight + Blueprint Texture */}
+          <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-45" aria-hidden="true" />
+          <div className="pointer-events-none absolute top-0 left-12 right-12 h-px edge-highlight" aria-hidden="true" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center">
-            
-            {/* Left Column (Grid Span 5): Blue Theme Content */}
-            <div className="lg:col-span-5 flex flex-col items-start text-left">
+          {/* Subtle Autoplay Status Bar */}
+          <div className="relative z-10 flex items-center justify-between pb-5 mb-6 border-b border-white/[0.08]">
+            <div className="flex items-center gap-2.5 font-mono text-xs text-[#c6d6e1]">
+              <span className="rounded bg-[#0e6bfd] px-2 py-0.5 text-white font-semibold tabular-nums">
+                Step {activeStage.stepNumber} / 04
+              </span>
+              <span>{activeStage.department}</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setIsPaused((p) => !p)}
+                className="inline-flex h-7 items-center gap-1.5 rounded-md border border-white/[0.12] bg-white/[0.05] hover:bg-white/[0.1] px-2.5 font-mono text-[11px] text-[#c6d6e1] transition-colors cursor-pointer"
+              >
+                {isPaused ? <Play className="size-3" /> : <Pause className="size-3" />}
+                <span>{isPaused ? "Resume tour" : "Auto-playing"}</span>
+              </button>
+              <button
+                type="button"
+                onClick={handleNext}
+                className="inline-flex h-7 items-center gap-1 rounded-md bg-white/[0.08] hover:bg-white/[0.15] px-2.5 font-mono text-[11px] text-white transition-colors cursor-pointer"
+              >
+                <span>Next</span>
+                <ArrowRight className="size-3" />
+              </button>
+            </div>
+          </div>
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Column: Stage Details */}
+            <div className="lg:col-span-5 flex flex-col items-start">
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={activeStep.id}
-                  initial={{ opacity: 0, y: 8 }}
+                  key={activeStage.slug}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="w-full flex flex-col items-start"
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                  className="w-full space-y-4"
                 >
-                  {/* Flex-row Header Tag */}
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-sm sm:text-base font-bold text-white tracking-wide">
-                      {activeStep.headerTag}
-                    </span>
-                    <span className="bg-white/10 text-slate-300 border border-white/15 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">
-                      {activeStep.badgeLabel}
-                    </span>
-                  </div>
-
-                  {/* Substantial Heading */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mt-2 sm:mt-2.5 leading-snug tracking-tight">
-                    {activeStep.activeHeadline}
+                  <h3 className="text-2xl sm:text-[26px] font-semibold tracking-[-0.015em] text-white leading-snug">
+                    {activeStage.title}
                   </h3>
 
-                  {/* Descriptive Paragraph */}
-                  <p className="text-[#c6d6e1] text-xs sm:text-sm mt-1.5 sm:mt-2 leading-relaxed">
-                    {activeStep.description}
-                  </p>
+                  <p className="text-sm text-[#c6d6e1] leading-relaxed">{activeStage.fullDesc}</p>
+
+                  {/* Capabilities Checklist */}
+                  <div className="space-y-2 pt-3 border-t border-white/[0.1]">
+                    {activeStage.checkpoints.map((cp) => (
+                      <div key={cp} className="flex items-start gap-2.5 text-xs text-[#dbe7f0]">
+                        <Check className="size-4 stroke-[1.75] text-[#4cc38a] shrink-0 mt-0.5" />
+                        <span>{cp}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Metrics Row */}
+                  <div className="grid grid-cols-3 gap-3 pt-3 border-t border-white/[0.1]">
+                    {activeStage.metrics.map((m) => (
+                      <div key={m.label}>
+                        <div className="text-sm font-semibold text-white tabular-nums">{m.value}</div>
+                        <div className="text-[11px] text-[#8ba5b8]">{m.label}</div>
+                      </div>
+                    ))}
+                  </div>
                 </motion.div>
               </AnimatePresence>
 
-              {/* Action Buttons */}
-              <div className="mt-3.5 sm:mt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full">
-                <button
-                  type="button"
-                  onClick={handleNextStep}
-                  className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-[#0e6bfd] hover:bg-blue-600 text-white font-semibold text-xs px-4 py-2 shadow-lg shadow-blue-500/30 transition-all active:scale-95 cursor-pointer"
-                >
-                  <span>Next Workflow Step</span>
-                  <ArrowRight className="size-3.5" />
-                </button>
+              {/* Actions */}
+              <div className="flex flex-wrap items-center gap-3 pt-6">
                 <Link
-                  href={`/workflows/${activeStep.id === "intake" ? "order-intake" : activeStep.id === "cutting" ? "cutting-prep" : activeStep.id}`}
-                  className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-white/20 hover:border-white/35 bg-white/[0.08] hover:bg-white/[0.14] text-white font-semibold text-xs px-3.5 py-2 transition-colors"
+                  href={`/workflows/${activeStage.slug}`}
+                  className="inline-flex h-10 items-center gap-2 rounded-lg bg-[#0e6bfd] hover:bg-[#0b5ad9] px-4 text-xs font-medium text-white shadow-md shadow-[#0e6bfd]/30 transition-all active:scale-[0.98]"
                 >
-                  <span>Inspect Full Stage Details</span>
+                  <span>Inspect stage details</span>
+                  <ArrowRight className="size-3.5 stroke-[1.5]" />
+                </Link>
+                <Link
+                  href="/signup"
+                  className="inline-flex h-10 items-center gap-2 rounded-lg border border-white/[0.16] bg-white/[0.06] hover:bg-white/[0.12] px-4 text-xs font-medium text-white transition-colors"
+                >
+                  <span>Start 14-day free trial</span>
                 </Link>
               </div>
             </div>
 
-            {/* Right Column (Grid Span 7): White-Themed Dashboard Picture */}
+            {/* Right Column: Rich Animated Stage Visual */}
             <div className="lg:col-span-7">
-              <div className="relative rounded-xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.35)] overflow-hidden bg-white p-1 sm:p-1.5">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeStep.id}
-                    initial={{ opacity: 0, scale: 0.985 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.985 }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                    className="relative w-full aspect-[16/10] max-h-[340px] rounded-lg overflow-hidden bg-white"
-                  >
-                    <Image
-                      src={activeStep.screenshot}
-                      alt={activeStep.alt}
-                      fill
-                      className="object-cover object-top"
-                      priority
-                      style={{
-                        imageRendering: "-webkit-optimize-contrast",
-                      }}
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeStage.slug}
+                  initial={{ opacity: 0, scale: 0.98, x: 12 }}
+                  animate={{ opacity: 1, scale: 1, x: 0 }}
+                  exit={{ opacity: 0, scale: 0.98, x: -12 }}
+                  transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <WorkflowStageVisual stageSlug={activeStage.slug} />
+                </motion.div>
+              </AnimatePresence>
             </div>
-
           </div>
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );

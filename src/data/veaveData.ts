@@ -13,17 +13,21 @@ export interface WorkflowStage {
   metrics: { label: string; value: string }[];
 }
 
-export interface FeatureItem {
+export interface PlatformTool {
   slug: string;
-  pillar: string;
-  pillarNumber: string;
   title: string;
-  shortDesc: string;
-  fullDesc: string;
-  icon: string;
-  capabilities: string[];
-  screenshot?: string;
+  desc: string;
+  iconName: string;
   targetRole: string;
+  screenshot?: string;
+  highlights?: string[];
+}
+
+export interface PlatformPillar {
+  number: string;
+  title: string;
+  description: string;
+  tools: PlatformTool[];
 }
 
 export interface RoleDetail {
@@ -54,313 +58,285 @@ export interface ToolItem {
 
 export const WORKFLOW_STAGES: WorkflowStage[] = [
   {
-    slug: "order-intake",
+    slug: "storefront-intake",
     stepNumber: "01",
-    title: "Order Intake & Specifications",
-    shortDesc: "Digitize specifications, BOM & material allocation",
+    title: "Storefront, estimator & lead capture",
+    shortDesc: "Launch your public site, instant quote matrix & inbound lead capture",
     fullDesc:
-      "Every production run begins with a single digital job card. Ingest purchase orders, define product variations, assign engineering tolerance profiles, and calculate required material consumption before production begins.",
-    department: "Planning & Merchandising",
-    typicalTime: "1-2 Hours",
-    requiredPhotos: 2,
+      "Every workspace includes a visual multi-page website builder on your own subdomain or verified custom domain. Publish your capabilities, completed order portfolio, verified Google Places reviews, and a category pricing matrix that captures inbound RFQs and Contact Us inquiries straight into your CRM.",
+    department: "Storefront & Marketing",
+    typicalTime: "Live on day 1",
+    requiredPhotos: 0,
     checkpoints: [
-      "Client purchase order verification against engineering specification",
-      "Digital CAD drawings and design specifications sync",
-      "Raw material lot number, quality test & staging approval",
-      "Bill of Materials (BOM) components and hardware reservation"
+      "Visual website builder with 6 hero layouts, 12 curated themes & 8-token color controls",
+      "Custom domain connection with automated DNS TXT/CNAME verification",
+      "Dynamic category pricing estimator & public RFQ intake modal",
+      "Live Google Business Profile & Google Places verified reviews sync"
     ],
-    screenshot: "/assets/veave/admin/order_details.png",
+    screenshot: "/assets/veave/admin/website_builder.png",
     benefits: [
-      "Eliminates miscommunication between engineering and shopfloor supervisors",
-      "Prevents starting production runs with unapproved material specs",
-      "Generates digital QR traveler job cards for shopfloor tracking"
+      "Replaces disconnected agency websites with a storefront wired directly to your CRM",
+      "Captures buyer inquiries and RFQ specs automatically into the Leads pipeline",
+      "Showcases real completed orders saved directly from your operations board"
     ],
     metrics: [
-      { label: "Spec Accuracy", value: "99.9%" },
-      { label: "BOM Verification", value: "Instant" },
-      { label: "CAD Sync", value: "Direct DXF/STEP" }
+      { label: "Storefront themes", value: "12 presets" },
+      { label: "Domain routing", value: "Custom DNS" },
+      { label: "Lead ingestion", value: "Real-time" }
     ]
   },
   {
-    slug: "cutting-prep",
+    slug: "crm-deals",
     stepNumber: "02",
-    title: "Engineering Staging & Material Prep",
-    shortDesc: "Material utilization, precision prep & component staging",
+    title: "CRM pipeline, meetings & proposals",
+    shortDesc: "Qualify leads, schedule Google Meet calls & negotiate opportunities",
     fullDesc:
-      "Shopfloor prep teams stage raw stock, verify tolerances, and execute precision cutting and staging. The Department Head uploads photographic evidence of staged components before batches move to assembly.",
-    department: "Preparation & Staging",
-    typicalTime: "3-6 Hours",
+      "Manage every buyer relationship from first inquiry to signed deal. Assign leads to sales representatives, maintain a complete customer directory with communication logs, schedule Google Calendar & Google Meet calls with automatic .ics invites, and send counter-proposals with advance payment terms.",
+    department: "CRM & Sales",
+    typicalTime: "Continuous pipeline",
+    requiredPhotos: 1,
+    checkpoints: [
+      "Inbound leads board with status filtering (Open, Won, Lost, Dormant) and source tracking",
+      "Buyer & customer directory with full order history and communication logs",
+      "Dual-mode Google Calendar & Google Meet OAuth2 scheduling with automatic email invites",
+      "Opportunities pipeline with counter-proposal negotiation, advance terms & 1-click order conversion"
+    ],
+    screenshot: "/assets/veave/admin/opportunities.png",
+    benefits: [
+      "One continuous record from initial website inquiry to opportunity and active order",
+      "Built-in Google Meet video links and calendar synchronization without leaving Veave",
+      "Clients review counter-proposals and attach design documents from the mobile app"
+    ],
+    metrics: [
+      { label: "Quote to order", value: "1-click convert" },
+      { label: "Meetings", value: "Google Meet sync" },
+      { label: "Buyer history", value: "Unified ledger" }
+    ]
+  },
+  {
+    slug: "orders-operations",
+    stepNumber: "03",
+    title: "Orders, floor plan & stage gates",
+    shortDesc: "Route orders across configurable departments, kanban tasks & quality gates",
+    fullDesc:
+      "When an opportunity closes, convert it into an active order in one click. Configure custom department workflows, track every batch on the visual business and floor plan board, assign team Kanban tasks, and optionally enforce sequential operational checkpoints, R2 photographic proof, and client approvals.",
+    department: "Operations & Fulfillment",
+    typicalTime: "Configurable per order",
     requiredPhotos: 3,
     checkpoints: [
-      "Raw material quantity, grade, and inspection verification",
-      "Material layout and cutting yield optimization standard",
-      "Critical component dimension and tolerance check (+/- 0.5mm)",
-      "Batch labeling with sequential QR traveler barcodes"
-    ],
-    screenshot: "/assets/veave/dept_head/operations_checkpoints.png",
-    benefits: [
-      "Reduces raw material scrap and remnant waste across bulk runs",
-      "Ensures exact serialized batch tracking across departments",
-      "Stops out-of-spec components before reaching assembly lines"
-    ],
-    metrics: [
-      { label: "Material Scrap Reduction", value: "4.2%" },
-      { label: "Tolerance Standard", value: "±0.5mm" },
-      { label: "Batch QR Tracking", value: "100%" }
-    ]
-  },
-  {
-    slug: "embroidery-print",
-    stepNumber: "03",
-    title: "Specialized Processing & Surface Finish",
-    shortDesc: "Surface finishing, coating, precision detailing & cure approval",
-    fullDesc:
-      "Components requiring specialized processing, surface coating, laser engraving, or printing advance to automated treatment stations. Supervisors verify finish consistency and color calibration under standard light booths.",
-    department: "Specialized Processing",
-    typicalTime: "4-8 Hours",
-    requiredPhotos: 2,
-    checkpoints: [
-      "Initial first-piece sample signed off under standard inspection lighting",
-      "Coating thickness, surface finish, and adhesion check",
-      "Print / engraving cure and durability confirmation",
-      "Color and finish matching against approved master standard"
-    ],
-    screenshot: "/assets/veave/dept_head/tasks.png",
-    benefits: [
-      "Guarantees first-piece sample approval before bulk processing",
-      "Cuts calibration errors on multi-stage treatments",
-      "Tracks equipment maintenance to prevent surface defects"
-    ],
-    metrics: [
-      { label: "Finish Accuracy", value: "Delta E < 1.0" },
-      { label: "First Piece Sign-off", value: "Mandatory" },
-      { label: "Durability Standard", value: "Grade 4.5" }
-    ]
-  },
-  {
-    slug: "assembly-stitching",
-    stepNumber: "04",
-    title: "Assembly Line Operations",
-    shortDesc: "Progressive line assembly, station cycle times & joining",
-    fullDesc:
-      "Assembly lines execute progressive sectional assembly: sub-assemblies and main bodies are joined using calibrated workstations. Supervisors monitor line cycle times and log active batch milestones.",
-    department: "Assembly Lines",
-    typicalTime: "6-18 Hours",
-    requiredPhotos: 4,
-    checkpoints: [
-      "Critical joining tolerance verification using precision gauges",
-      "Workstation cycle balance inspection under active line conditions",
-      "Mechanical fastener torque and bonding strength verification",
-      "Critical dimension checkpoints across primary assembly axes"
+      "Configurable department routing and operation templates per product or service type",
+      "Visual business & floor plan pipeline tracking leads, opportunities, active orders & completed runs",
+      "Dedicated workspaces for Admins (/dashboard), Department Heads (/my-work) & QC (/qc-queue)",
+      "Sequential completion gates: optional QC inspection -> client mobile approval -> packing & paid gate"
     ],
     screenshot: "/assets/veave/admin/floor_plan.png",
     benefits: [
-      "Balances line bottlenecks between individual assembly operations",
-      "Live operator accountability ensures mistakes are traced to individual stations",
-      "Provides real-time work-in-progress (WIP) counts per line"
+      "Adapts to any workflow—use simple order tracking or multi-department stage gates",
+      "Gives supervisors and inspectors clean, distraction-free queues for their exact role",
+      "Stores all media, tech packs, and delivery proof in Cloudflare R2 private storage"
     ],
     metrics: [
-      { label: "Line Balance Efficiency", value: "89.4%" },
-      { label: "Station Consistency", value: "100% Calibrated" },
-      { label: "Live WIP Tracking", value: "Real-time" }
+      { label: "Workflow stages", value: "100% custom" },
+      { label: "Media storage", value: "Cloudflare R2" },
+      { label: "Role views", value: "7 presets" }
     ]
   },
   {
-    slug: "quality-control",
-    stepNumber: "05",
-    title: "Shopfloor QC Gate & Audit",
-    shortDesc: "Independent tolerance verification, photo proof & approval",
+    slug: "financials-team",
+    stepNumber: "04",
+    title: "Financial records, team roles & vault",
+    shortDesc: "Track revenue, expenses, payroll, granular permissions & compliance docs",
     fullDesc:
-      "Quality assurance is strictly independent: only certified QC Inspectors can sign off on finished units. Inspectors compare physical dimensions against technical specifications and capture Cloudinary signed photo proof.",
-    department: "Quality Assurance",
-    typicalTime: "1-3 Hours",
-    requiredPhotos: 5,
+      "Keep your books, team, and compliance documents in the same workspace. Record order payments, advances, operating expenses, and staff payroll in the financial ledger; assign granular 12-module role permissions; collaborate in real-time Socket.IO team chat; and manage subscriptions through Paddle Billing.",
+    department: "Finance, Team & Governance",
+    typicalTime: "Real-time ledger",
+    requiredPhotos: 0,
     checkpoints: [
-      "100% specification inspection against technical tolerance table",
-      "Critical visual audit: cosmetic blemishes, surface flaws, loose fittings",
-      "Symmetrical alignment and functional testing verification",
-      "Cloudinary cryptographic signed photographic evidence archive"
+      "Financial records ledger tracking order payments, advances, operating expenses & payroll",
+      "12-module permission matrix with 7 role presets (Product Manager, Sales, Accountant, Merchandiser, etc.)",
+      "Real-time WebSocket team chat with colleague directory and instant notifications",
+      "Immutable Cloudflare R2 compliance document vault, 2FA security, audit logs & Paddle Billing"
     ],
-    screenshot: "/assets/veave/qc/qc_dashboard.png",
+    screenshot: "/assets/veave/admin/revenue.png",
     benefits: [
-      "Zero defect escapes to client shipping cartons",
-      "Defect rectification loop sends failed units back with exact notes",
-      "Complete timestamped audit trail protects factory against unjustified claims"
+      "Eliminates spreadsheet drift between sales quotes, floor orders, and financial collections",
+      "Granular module ACLs ensure each staff member only sees the modules their role requires",
+      "Self-serve Paddle Billing with 14-day trials, regional pricing, and automated tax invoices"
     ],
     metrics: [
-      { label: "Defect Escape Rate", value: "< 0.05%" },
-      { label: "Photo Evidence", value: "Cloudinary Signed" },
-      { label: "Audit Integrity", value: "100% Immutable" }
-    ]
-  },
-  {
-    slug: "finishing-packing",
-    stepNumber: "06",
-    title: "Final Finishing & Packaging",
-    shortDesc: "Final inspection, serialized labeling, boxing & dispatch",
-    fullDesc:
-      "Approved units undergo final surface cleaning, protective wrapping, and custom branded labeling, followed by barcode scanning, ratio packing, and shipping carton bundling.",
-    department: "Finishing & Logistics",
-    typicalTime: "2-4 Hours",
-    requiredPhotos: 2,
-    checkpoints: [
-      "Final surface cleaning and cosmetic inspection",
-      "Final safety compliance and functional scan",
-      "Serialized barcode SKU, custom branding, and compliance label check",
-      "Carton pack ratio verification against shipping manifest"
-    ],
-    screenshot: "/assets/veave/admin/orders.png",
-    benefits: [
-      "Pristine customer-ready presentation upon final delivery",
-      "100% safety and regulatory compliance for export goods",
-      "Accurate packing lists eliminate carton shortages and logistics errors"
-    ],
-    metrics: [
-      { label: "Inspection Pass", value: "100% Verified" },
-      { label: "Pack Accuracy", value: "100%" },
-      { label: "Shipment Readiness", value: "Automated Manifest" }
+      { label: "Access matrix", value: "12 modules" },
+      { label: "Security", value: "TOTP 2FA + Audit" },
+      { label: "Billing engine", value: "Paddle MoR" }
     ]
   }
 ];
 
-export const PLATFORM_PILLARS = [
+export const PLATFORM_PILLARS: PlatformPillar[] = [
   {
     number: "01",
-    title: "From Specs to Shop Floor",
-    description: "Translate technical designs, specifications, and raw materials into structured shopfloor digital job cards.",
+    title: "Storefront, Brand & Buyer CRM",
+    description:
+      "Publish your commercial website, showcase verified Google reviews, estimate quotes automatically, and manage every lead and customer in one CRM.",
     tools: [
       {
-        slug: "order-intake",
-        title: "Order Intake & Specifications",
-        desc: "Ingest client purchase orders, specifications, custom dimensions, and target delivery milestones in one centralized ledger.",
-        icon: "/assets/inventory.svg",
-        targetRole: "Admin / Operations"
+        slug: "visual-website-builder",
+        title: "Visual Storefront & Theme Builder",
+        desc: "Multi-page visual website editor with 6 hero layouts, 12 curated themes, 8-token color palettes, profile copy generator, and portfolio publishing.",
+        iconName: "Globe",
+        targetRole: "Admin / Marketing",
+        screenshot: "/assets/veave/admin/website_builder.png"
       },
       {
-        slug: "department-configurator",
-        title: "Assembly Line Configurator",
-        desc: "Drag-and-drop assembly stages: customize whether a product flows through Prep -> Processing -> Assembly -> QC -> Packaging.",
-        icon: "/assets/photos-studio-360.svg",
-        targetRole: "Production Head"
+        slug: "custom-domains-seo",
+        title: "Custom Domains & Automated DNS",
+        desc: "Run on your free {company}.veave.systemic.pk address or connect your own custom domain with built-in DNS TXT/CNAME verification and SEO controls.",
+        iconName: "Link2",
+        targetRole: "Enterprise / Admin",
+        screenshot: "/assets/veave/admin/website_builder.png"
       },
       {
-        slug: "digital-job-cards",
-        title: "Digital Job Cards & QR Traveler",
-        desc: "Replace lost paper job cards with waterproof QR traveler badges readable by any smartphone camera or shopfloor scanner.",
-        icon: "/assets/dealership-website.svg",
-        targetRole: "All Factory Staff"
+        slug: "instant-price-estimator",
+        title: "Category Price Estimator & RFQ Intake",
+        desc: "Configure base unit pricing and lead-time tiers so visiting buyers can estimate project costs and submit structured RFQs straight into your pipeline.",
+        iconName: "Calculator",
+        targetRole: "Sales / Merchandising",
+        screenshot: "/assets/veave/admin/leads.png"
       },
       {
-        slug: "measurement-profiles",
-        title: "Measurement Profiles & Tolerances",
-        desc: "Define millimeter-accurate tolerance tables for dimensions, fit, and build with automated pass/fail limits.",
-        icon: "/assets/ai-salesman-operator.svg",
-        targetRole: "Design / QC"
+        slug: "google-reviews-sync",
+        title: "Google Business & Places Reviews",
+        desc: "Connect Google Business Profile OAuth2 or Place ID to display verified Google Maps ratings and customer testimonials on your storefront.",
+        iconName: "Star",
+        targetRole: "Marketing Manager",
+        screenshot: "/assets/veave/admin/reviews.png"
       },
       {
-        slug: "fabric-allocation",
-        title: "Raw Material & Component Allocation",
-        desc: "Track raw material inventory, quality test results, component lots, hardware, and subcomponent stock per production batch.",
-        icon: "/assets/customers-leads.svg",
-        targetRole: "Warehouse Manager"
+        slug: "crm-inbound-leads",
+        title: "Inbound Leads & Outreach Pipeline",
+        desc: "Centralize Contact Us inquiries, public RFQs, and direct buyer outreach with status tabs (Open, Won, Lost, Dormant) and sales rep assignment.",
+        iconName: "Filter",
+        targetRole: "Sales Representative",
+        screenshot: "/assets/veave/admin/leads.png"
       },
       {
-        slug: "production-scheduling",
-        title: "Capacity & Due Date Scheduling",
-        desc: "Forward-schedule production lines against factory work capacity to guarantee on-time shipping for domestic and export orders.",
-        icon: "/assets/deals-paperwork-esign.svg",
-        targetRole: "Plant Manager"
+        slug: "customer-directory",
+        title: "Customer Directory & Comms Log",
+        desc: "Maintain a searchable buyer directory with brand details, location, linked deals, active orders, and timestamped client communication logs.",
+        iconName: "Users",
+        targetRole: "Sales / Product Manager",
+        screenshot: "/assets/veave/admin/customers.png"
       }
     ]
   },
   {
     number: "02",
-    title: "Shop Floor Execution & Quality",
-    description: "Empower supervisors and operators with clear checkpoint queues, camera evidence, and independent QC approvals.",
+    title: "Deals, Orders & Operations",
+    description:
+      "Schedule buyer meetings on Google Meet, negotiate opportunities, convert won deals into orders, and track execution across your floor and team.",
     tools: [
       {
-        slug: "department-workspace",
-        title: "Department Head Mobile Workspace",
-        desc: "Distraction-free queue showing floor supervisors and station operators exactly which batches need their attention right now.",
-        icon: "/assets/advertising-feeds.svg",
-        targetRole: "Department Heads"
+        slug: "opportunities-proposals",
+        title: "Sales Opportunities & Counter-Proposals",
+        desc: "Track deal value, volume, payment terms, and advances. Dispatch counter-proposals to buyers and convert won opportunities into orders in one click.",
+        iconName: "Briefcase",
+        targetRole: "Sales / Admin",
+        screenshot: "/assets/veave/admin/opportunities.png"
       },
       {
-        slug: "milestone-checkpoints",
-        title: "Mandatory Milestone Checkpoints",
-        desc: "Enforce strict physical actions, alignment checks, and calibration tests before orders can advance.",
-        icon: "/assets/recon-work-orders.svg",
-        targetRole: "Floor Supervisors"
+        slug: "google-meet-appointments",
+        title: "Google Meet & Calendar Scheduling",
+        desc: "Connect Google Calendar OAuth2 to generate live Google Meet links, send RFC 5545 .ics email invites, and manage buyer appointments.",
+        iconName: "Calendar",
+        targetRole: "Sales / Merchandiser",
+        screenshot: "/assets/veave/admin/appointments.png"
       },
       {
-        slug: "photo-evidence",
-        title: "Cloudinary Signed Photo Proof",
-        desc: "Cryptographically signed photographic evidence uploaded directly from mobile cameras into tamper-proof cloud CDN archives.",
-        icon: "/assets/payment-processing.svg",
-        targetRole: "Supervisors & QC"
+        slug: "orders-workflow-builder",
+        title: "Order Management & Workflow Builder",
+        desc: "Manage specifications, due dates, attachments, and custom department sequences for every order from intake through final delivery.",
+        iconName: "ClipboardList",
+        targetRole: "Admin / Product Manager",
+        screenshot: "/assets/veave/admin/order_details.png"
       },
       {
-        slug: "qc-inspection-queue",
-        title: "Independent QC Inspection Queue",
-        desc: "Certified quality inspectors review submitted checkpoints with side-by-side spec comparison and 1-click approvals.",
-        icon: "/assets/books-accounting.svg",
-        targetRole: "QC Inspectors"
+        slug: "visual-floor-plan",
+        title: "Visual Business & Floor Plan Pipeline",
+        desc: "See the entire business pipeline (Leads -> Opportunities -> Active Floor Orders -> Completed) alongside live department and operation progress.",
+        iconName: "LayoutGrid",
+        targetRole: "Operations / Supervisors",
+        screenshot: "/assets/veave/admin/floor_plan.png"
       },
       {
-        slug: "defect-rectification",
-        title: "Defect Callout & Rectification Loop",
-        desc: "Instantly route rejected batches back to the responsible department with mandatory photo annotations and defect remarks.",
-        icon: "/assets/buy-here-pay-here.svg",
-        targetRole: "QC & Supervisors"
+        slug: "kanban-tasks-board",
+        title: "Team Kanban Tasks Board",
+        desc: "Assign operational tasks linked to specific orders or leads, track due dates, and move work across To Do, In Progress, and Completed columns.",
+        iconName: "CheckSquare",
+        targetRole: "All Staff",
+        screenshot: "/assets/veave/admin/tasks.png"
       },
       {
-        slug: "factory-floor-plan",
-        title: "Visual Factory Floor Plan",
-        desc: "Interactive layout map of workstation tables, assembly lines, and finishing stations with live order status indicators.",
-        icon: "/assets/floor-plan.svg",
-        targetRole: "Operations Director"
+        slug: "checkpoints-qc-queue",
+        title: "Workstation Queues & Quality Gates",
+        desc: "Optional sequential operation checkpoints (/my-work) and independent QC inspection queues (/qc-queue) with R2 photo evidence and rework loops.",
+        iconName: "ShieldCheck",
+        targetRole: "Dept Heads & QC",
+        screenshot: "/assets/veave/qc/qc_dashboard.png"
       }
     ]
   },
   {
     number: "03",
-    title: "Business, Teams & Intelligence",
-    description: "Complete operational visibility, multi-tenant company security, and automated factory briefings.",
+    title: "Financials, Team & Governance",
+    description:
+      "Control company finances, granular staff permissions, real-time messaging, private R2 document storage, and Paddle subscription billing.",
     tools: [
       {
-        slug: "factory-analytics",
-        title: "Factory Analytics & Efficiency (OEE)",
-        desc: "Live KPI dashboard tracking daily finished unit output, Overall Equipment Effectiveness (OEE), cycle times, and scrap rates.",
-        icon: "/assets/reporting-insights.svg",
-        targetRole: "Factory Owner"
+        slug: "financial-records-ledger",
+        title: "Financial Records, Expenses & Payroll",
+        desc: "Track order payments, advance collections, operating expenses, and staff payroll with 6-month revenue vs. expense analytics and CSV exports.",
+        iconName: "DollarSign",
+        targetRole: "Admin / Accountant",
+        screenshot: "/assets/veave/admin/revenue.png"
       },
       {
-        slug: "team-chat",
-        title: "Real-Time Shopfloor Team Chat",
-        desc: "Integrated WebSocket chat linking factory owners, department heads, and QC inspectors directly inside order contexts.",
-        icon: "/assets/titles-dmv.svg",
-        targetRole: "All Staff"
+        slug: "custom-role-matrix",
+        title: "12-Module Custom Role Permission Matrix",
+        desc: "Assign 7 role presets (Product Manager, Sales, Merchandiser, Accountant, Marketing, Supervisor, QC) or build custom per-module access controls.",
+        iconName: "Sliders",
+        targetRole: "Workspace Admin",
+        screenshot: "/assets/veave/admin/team.png"
       },
       {
-        slug: "subdomain-isolation",
-        title: "Subdomain Multi-Tenant Isolation",
-        desc: "Each factory operates on its own dedicated subdomain (e.g. factory-name.veave.pk) with total database tenant isolation.",
-        icon: "/assets/compliance.svg",
-        targetRole: "Enterprise Security"
+        slug: "realtime-team-chat",
+        title: "Real-Time Team Chat & Notifications",
+        desc: "Built-in Socket.IO messaging with a searchable colleague directory, order-linked threads, and instant browser and mobile notifications.",
+        iconName: "MessageSquare",
+        targetRole: "All Staff",
+        screenshot: "/assets/veave/admin/teamchat.png"
       },
       {
-        slug: "role-permissions",
-        title: "Role-Based Access & Audit Trails",
-        desc: "Strict separation of duties ensuring assembly operators cannot approve their own quality, with immutable timestamped logs.",
-        icon: "/assets/security-roles.svg",
-        targetRole: "System Admin"
+        slug: "cloudflare-r2-vault",
+        title: "Cloudflare R2 Private Document Vault",
+        desc: "Store trade licenses, tax registrations, tech packs, and checkpoint media in tenant-isolated Cloudflare R2 buckets with live quota meters.",
+        iconName: "HardDrive",
+        targetRole: "Admin / Compliance",
+        screenshot: "/assets/veave/admin/admin_dashboard.png"
       },
       {
-        slug: "telegram-briefings",
-        title: "Telegram & WhatsApp Executive Briefings",
-        desc: "Automated morning summaries delivered to owner phones: completed units, active line bottlenecks, and pending QC escalations.",
-        icon: "/assets/ai-updates-telegram.svg",
-        targetRole: "Executive Leadership"
+        slug: "client-mobile-portal",
+        title: "Dedicated Client Mobile App Portal",
+        desc: "Buyers track live order milestones, negotiate counter-proposals, approve finished stages, and submit verified reviews from the mobile app.",
+        iconName: "Smartphone",
+        targetRole: "B2B Buyers & Clients",
+        screenshot: "/assets/veave/admin/orders.png"
+      },
+      {
+        slug: "security-2fa-billing",
+        title: "2FA Security, Audit Logs & Paddle Billing",
+        desc: "Enforce Gmail OTP + Authenticator TOTP 2FA, inspect immutable audit trails, and manage 14-day trials and subscriptions via Paddle Billing.",
+        iconName: "Lock",
+        targetRole: "Admin / Security",
+        screenshot: "/assets/veave/admin/admin_dashboard.png"
       }
     ]
   }
@@ -369,107 +345,110 @@ export const PLATFORM_PILLARS = [
 export const ROLE_DETAILS: Record<string, RoleDetail> = {
   admin: {
     slug: "admin",
-    roleName: "Factory Admin",
-    title: "Factory Owner & General Manager Command Center",
-    badge: "Full Production Control",
-    subtitle: "Complete bird's-eye visibility across commercial orders, department assembly lines, revenues, and quality escapes.",
+    roleName: "Workspace Admin",
+    title: "Executive CRM, Storefront & Operations Command Center",
+    badge: "Full Workspace Control",
+    subtitle:
+      "Manage your public storefront, CRM deals, production orders, financial ledger, custom staff roles, and Paddle billing from one dashboard.",
     overview:
-      "The Factory Admin workspace is designed for owners, managing directors, and plant heads who need total command over their manufacturing business. View all active production orders, configure dynamic department sequences, balance assembly lines, manage staff roles, and track revenue and margins in real-time.",
+      "The Workspace Admin console brings every commercial and operational record together. Launch your brand storefront, track inbound leads and Google Meet appointments, convert opportunities into orders, monitor the visual floor plan, audit financial records, and configure granular 12-module permissions for your team.",
     screenshot: "/assets/veave/admin/admin_dashboard.png",
     keyResponsibilities: [
-      "Order intake, technical specification verification & delivery milestone commitments",
-      "Department assembly sequence configuration & operation checkpoint rules",
-      "Staff account approvals, department head assignments & QC inspector badges",
-      "Factory revenue tracking, order pricing, invoice generation & QuickBooks sync",
-      "Global QC oversight, inspection logs, defect escape audits & customer portal access"
+      "Storefront website builder, custom domain DNS, Google Reviews & category price estimator setup",
+      "CRM oversight across inbound leads, customer accounts, Google Meet appointments & sales opportunities",
+      "Order intake, custom department workflow routing, visual floor plan monitoring & final completion approval",
+      "Financial records ledger (order payments, advances, expenses, payroll) & Paddle subscription management",
+      "Staff invitations, 12-module custom role matrix (Sales, Product Manager, Accountant, etc.) & 2FA policies"
     ],
     dailyWorkflow: [
-      "08:00 AM: Review morning automated Telegram executive briefing on overnight output",
-      "09:30 AM: Ingest 3 new client purchase orders and assign sequential department routes",
-      "11:00 AM: Check visual floor plan to rebalance assembly line 4 experiencing bottleneck",
-      "02:00 PM: Review escalated QC defect reports with engineering supervisor in team chat",
-      "05:00 PM: Audit completed orders moving to packaging and export daily shipping manifest"
+      "09:00 AM: Review dashboard KPIs—monthly revenue, won opportunities, new website leads, and items needing attention",
+      "10:15 AM: Join a scheduled Google Meet call from Appointments and send a counter-proposal on an open opportunity",
+      "11:30 AM: Convert a won deal into an active order and assign tasks on the Kanban board",
+      "02:30 PM: Check the visual floor plan pipeline and approve a completed order to publish to the storefront portfolio",
+      "05:00 PM: Record received advance payments in Financial Records and review the workspace audit log"
     ],
     painPointsSolved: [
-      "Replaces scattered messaging updates with one unified real-time factory ledger",
-      "Stops unexpected shipping delays through automated capacity and due date forecasting",
-      "Protects proprietary designs and client specs with strict role-based access control"
+      "Replaces 5 separate tools (website builder, CRM, meeting scheduler, floor tracker, and accounting sheet) with one system",
+      "Ensures every quote, order, customer communication, and payment reads from the same database record",
+      "Protects company data with strict subdomain isolation, Cloudflare R2 private storage, and 2FA enforcement"
     ],
     metrics: [
-      { label: "Active Orders", value: "248 Units" },
-      { label: "On-Time Dispatch", value: "98.7%" },
-      { label: "OEE Efficiency", value: "84.2%" },
-      { label: "Data Isolation", value: "100% Subdomain" }
+      { label: "Integrated modules", value: "18 tools" },
+      { label: "Role presets", value: "7 templates" },
+      { label: "Trial period", value: "14 days" },
+      { label: "Tenant isolation", value: "100% subdomain" }
     ]
   },
   "dept-head": {
     slug: "dept-head",
-    roleName: "Department Head",
-    title: "Department Supervisor & Shopfloor Workspace",
-    badge: "Shopfloor Execution",
-    subtitle: "A mobile-first, high-contrast queue engineered for department heads and line supervisors on the shop floor.",
+    roleName: "Operations & Department Lead",
+    title: "Department Head & Role-Scoped Operational Workspace",
+    badge: "Operations & Execution",
+    subtitle:
+      "Focused workspaces for Department Heads, Product Managers, Floor Supervisors, and Sales Representatives.",
     overview:
-      "Shopfloor supervisors do not need complex financial charts or marketing analytics. They need an uncluttered, high-contrast task queue showing: 'What production batches are at my station right now, what actions must I verify, and what photo proof is required?' Veave delivers this directly to their smartphones or tablet workstations.",
+      "With Veave's 12-module permission matrix, each team lead gets a workspace tailored to their responsibilities. Department Heads manage active operations in /my-work, Product Managers coordinate client logs and order timelines, and Sales Representatives manage leads, appointments, and opportunities.",
     screenshot: "/assets/veave/dept_head/dept_head_dashboard.png",
     keyResponsibilities: [
-      "Receiving incoming production batches through QR barcode scans",
-      "Executing required physical operations and adhering to step-by-step checkpoints",
-      "Capturing and uploading high-resolution Cloudinary signed photographic evidence",
-      "Reviewing instant QC rejection notifications and defect tolerance remarks",
-      "Executing rectification work and resubmitting batches for quality re-clearance"
+      "Managing assigned orders and sequential operations in the dedicated /my-work queue",
+      "Updating stage progress, attaching Cloudflare R2 evidence files, and logging operational notes",
+      "Coordinating across the visual floor plan board and team Kanban task list",
+      "Communicating with admins, sales reps, and quality inspectors in real-time Socket.IO team chat",
+      "Resolving flagged rework items with full visibility into order specifications and due dates"
     ],
     dailyWorkflow: [
-      "08:15 AM: Scan incoming raw material lots and log inspection test results in Staging",
-      "10:30 AM: Upload photo of component nesting layout showing 92.4% material utilization",
-      "01:00 PM: Receive high-contrast red alert: QC rejected seam on batch #44 due to tolerance discrepancy",
-      "01:45 PM: Re-align affected component, capture replacement photo, and resubmit for review",
-      "04:30 PM: Sign off on completed 150-piece batch and hand off to main assembly line"
+      "08:30 AM: Open /my-work to see active orders and operations routed to the department",
+      "10:00 AM: Complete an operation checkpoint and upload signed evidence to Cloudflare R2",
+      "01:00 PM: Receive an instant notification if an item requires adjustment, with clear inspector notes",
+      "02:15 PM: Coordinate timeline updates with the Product Manager in Team Chat",
+      "04:30 PM: Mark assigned Kanban tasks complete and advance the batch to the next stage"
     ],
     painPointsSolved: [
-      "Eliminates lost or illegible paper job travelers stained on the shopfloor",
-      "Prevents supervisor disputes by clearly logging who performed which operation",
-      "Ensures clear defect feedback from QC rather than vague verbal complaints"
+      "Eliminates scattered WhatsApp messages and paper job travelers",
+      "Shows staff only the modules enabled for their custom role preset",
+      "Keeps every file attachment and status change permanently linked to the order record"
     ],
     metrics: [
-      { label: "Active Task Queue", value: "18 Batches" },
-      { label: "Avg Handoff Speed", value: "4.5 Mins" },
-      { label: "Photo Proof Uploads", value: "100% Signed" },
-      { label: "Rectification Time", value: "< 35 Mins" }
+      { label: "Workspace route", value: "/my-work" },
+      { label: "Custom presets", value: "7 roles" },
+      { label: "File storage", value: "Cloudflare R2" },
+      { label: "Team messaging", value: "Live Socket.IO" }
     ]
   },
   qc: {
     slug: "qc",
-    roleName: "QC Inspector",
-    title: "Quality Assurance & Inspection Command Queue",
+    roleName: "Quality & Verification Lead",
+    title: "Quality Assurance & Stage Verification Queue",
     badge: "Independent Verification",
-    subtitle: "Certified quality inspectors verify physical units against millimeter technical tolerances with photographic proof.",
+    subtitle:
+      "Structured review queue for verifying submitted checkpoints before client approval and dispatch.",
     overview:
-      "Quality cannot be certified by the same person who performed the work. Veave strictly separates production from quality control: only certified QC staff can sign off on finished operations. With high-resolution photo lightboxes and 1-click approvals, inspectors ensure zero defect escapes to clients.",
+      "For businesses that enable quality gates on their workflows, the /qc-queue workspace provides an independent verification step. Inspectors review submitted checkpoints, preview high-resolution R2 attachments, and either approve the stage (advancing it toward client mobile approval) or request rework with structured notes.",
     screenshot: "/assets/veave/qc/qc_dashboard.png",
     keyResponsibilities: [
-      "Reviewing pending inspection queues from all active factory departments",
-      "Inspecting high-resolution photos in zoomable lightboxes for defects, blemishes & alignment",
-      "Verifying physical dimensions against digital technical tolerance tables",
-      "Executing 1-click approvals to advance units to the next assembly department",
-      "Issuing 1-click rejections with mandatory defect notes and photo annotations"
+      "Reviewing pending checkpoint submissions across active orders in /qc-queue",
+      "Inspecting attached photos and specification documents in the built-in file previewer",
+      "Approving verified stages to unlock client mobile approval and final packing gates",
+      "Issuing structured rework requests with mandatory notes when tolerances are missed",
+      "Tracking historical pass rates and inspection audit trails across departments"
     ],
     dailyWorkflow: [
-      "08:30 AM: Open QC Inspector Queue and review 12 pending staging batches",
-      "09:15 AM: Verify sub-assembly symmetry in lightbox; approve batch #108 to main line",
-      "11:30 AM: Measure critical dimension: identify 4mm excess over +/- 1.5mm tolerance",
-      "11:35 AM: Click 'Reject with Notes', enter tolerance discrepancy, and assign back to prep",
-      "03:00 PM: Conduct final 100% AQL inspection on finished batch prior to packaging release"
+      "09:00 AM: Open /qc-queue and filter pending checkpoint submissions by due date",
+      "10:30 AM: Inspect uploaded R2 proof against order specifications and approve compliant batches",
+      "12:00 PM: Flag a non-conforming item with detailed defect notes, automatically alerting the department lead",
+      "03:00 PM: Verify resubmitted rectification proof and clear the order for client approval",
+      "04:45 PM: Review daily quality throughput on the floor plan pipeline"
     ],
     painPointsSolved: [
-      "Stops defect escapes before products are boxed and shipped to clients",
-      "Creates an unalterable photographic record of quality at every stage of assembly",
-      "Prevents shopfloor pressure from forcing substandard products through the line"
+      "Prevents unverified work from reaching clients when quality gates are enabled",
+      "Creates a timestamped audit trail of every approval and rework decision",
+      "Connects directly to the sequential client approval and paid-order completion gates"
     ],
     metrics: [
-      { label: "Pending Reviews", value: "6 Checkpoints" },
-      { label: "Escape Rate", value: "< 0.05%" },
-      { label: "Approval Latency", value: "8.2 Mins" },
-      { label: "Audit Integrity", value: "Cryptographic" }
+      { label: "Queue route", value: "/qc-queue" },
+      { label: "Evidence vault", value: "Private R2" },
+      { label: "Stage gating", value: "Sequential" },
+      { label: "Audit trail", value: "Immutable" }
     ]
   }
 };
@@ -480,7 +459,8 @@ export const FREE_TOOLS: ToolItem[] = [
     title: "Material Consumption & Yield Calculator",
     tagline: "Calculate exact material required per batch based on dimensions, scrap %, and staging waste.",
     category: "Material & Yield",
-    description: "Determine exact linear meters, square footage, or raw stock required for bulk production orders based on component surface area, stock unit size, safety allowance, and process scrap.",
+    description:
+      "Determine exact linear meters, square footage, or raw stock required for bulk production orders based on component surface area, stock unit size, safety allowance, and process scrap.",
     formulaDescription: "Total Material Required = (Unit Area / Material Width) * Total Units * (1 + Scrap% + Wastage%)",
     inputs: [
       { name: "units", label: "Order Quantity (Pieces)", defaultValue: 500, unit: "pcs" },
@@ -494,10 +474,11 @@ export const FREE_TOOLS: ToolItem[] = [
   },
   {
     slug: "sam-calculator",
-    title: "Production SAM (Standard Allowed Minute) & SMV Calculator",
+    title: "Production SAM (Standard Allowed Minute) & Cost Calculator",
     tagline: "Estimate line capacity, cycle times, and labor cost per unit.",
-    category: "Industrial Engineering",
-    description: "Standard Allowed Minute (SAM) measures the exact time needed for a qualified worker to complete an operation at standard performance with relaxation allowances.",
+    category: "Operations & Costing",
+    description:
+      "Standard Allowed Minute (SAM) measures the time needed for a qualified operator to complete an operation at standard performance with relaxation allowances.",
     formulaDescription: "SAM = Basic Minute * (1 + Rating / 100) * (1 + Allowance / 100)",
     inputs: [
       { name: "basicMinutes", label: "Observed Basic Cycle Time", defaultValue: 18.5, unit: "mins" },
@@ -513,10 +494,11 @@ export const FREE_TOOLS: ToolItem[] = [
     title: "AQL 2.5 Sampling & Inspection Table Calculator",
     tagline: "Determine required sample sizes and acceptable defect limits per ISO 2859-1 standards.",
     category: "Quality Assurance",
-    description: "Acceptable Quality Limit (AQL) 2.5 Normal Level II dictates how many units an inspector must examine and the maximum defects allowed before batch rejection.",
-    formulaDescription: "Calculated based on ISO 2859-1 / ANSI/ASQ Z1.4 sampling tables for industrial inspection.",
+    description:
+      "Acceptable Quality Limit (AQL) 2.5 Normal Level II dictates how many units an inspector examines and the maximum defects allowed before batch rework.",
+    formulaDescription: "Calculated based on ISO 2859-1 / ANSI/ASQ Z1.4 sampling tables.",
     inputs: [
-      { name: "batchSize", label: "Total Production Lot Size", defaultValue: 1200, unit: "units" },
+      { name: "batchSize", label: "Total Order Lot Size", defaultValue: 1200, unit: "units" },
       { name: "inspectionLevel", label: "Inspection Strictness Level (1: Low, 2: Normal, 3: Tight)", defaultValue: 2, unit: "level" }
     ],
     outputLabel: "Recommended Sample Inspection Size",
@@ -525,13 +507,14 @@ export const FREE_TOOLS: ToolItem[] = [
   {
     slug: "line-balancing",
     title: "Line Balancing & Pitch Time Estimator",
-    tagline: "Calculate operator distribution, pitch time, and line efficiency %.",
-    category: "Factory Operations",
-    description: "Balance assembly lines by distributing individual operations evenly across workstations to eliminate bottleneck pile-ups and idle operator times.",
-    formulaDescription: "Pitch Time = Total Unit SAM / Number of Operators on Line",
+    tagline: "Calculate staff distribution, pitch time, and throughput efficiency.",
+    category: "Capacity Planning",
+    description:
+      "Balance workstations by distributing operations evenly across staff to eliminate bottlenecks and idle time.",
+    formulaDescription: "Pitch Time = Total Unit SAM / Number of Active Staff",
     inputs: [
       { name: "totalSam", label: "Total Unit SAM", defaultValue: 24.2, unit: "minutes" },
-      { name: "operators", label: "Total Assembly Line Operators", defaultValue: 32, unit: "workers" },
+      { name: "operators", label: "Total Active Operators", defaultValue: 32, unit: "workers" },
       { name: "dailyHours", label: "Working Shift Duration", defaultValue: 8, unit: "hours" }
     ],
     outputLabel: "Target Pitch Time per Workstation",
@@ -539,25 +522,27 @@ export const FREE_TOOLS: ToolItem[] = [
   },
   {
     slug: "thread-consumption",
-    title: "Hardware & Consumables Usage Calculator",
-    tagline: "Calculate assembly fasteners, bonding agents, and consumable quantities per unit.",
-    category: "Costing & Materials",
-    description: "Accurately forecast consumable hardware requirements to avoid costly stockouts during bulk production runs.",
-    formulaDescription: "Consumable Quantity = (Units * Rate per Unit) * (1 + Wastage %)",
+    title: "Quote Margin & Advance Payment Calculator",
+    tagline: "Calculate unit selling price, gross margin, and required advance deposit.",
+    category: "CRM & Deal Desking",
+    description:
+      "Forecast order profitability and upfront advance payment requirements before sending a counter-proposal in Veave CRM.",
+    formulaDescription: "Gross Total = (Units * Unit Cost) * (1 + Target Margin %)",
     inputs: [
-      { name: "lockstitchSeam", label: "Primary Joint Fasteners / Length", defaultValue: 4.8, unit: "units/m" },
-      { name: "overlockSeam", label: "Secondary Joint Fasteners / Length", defaultValue: 8.5, unit: "units/m" },
-      { name: "threadWastage", label: "Process Allowance & Scrap", defaultValue: 15, unit: "%" }
+      { name: "lockstitchSeam", label: "Material Cost per Unit", defaultValue: 12.5, unit: "$" },
+      { name: "overlockSeam", label: "Labor & Overhead per Unit", defaultValue: 6.5, unit: "$" },
+      { name: "threadWastage", label: "Target Profit Margin", defaultValue: 28, unit: "%" }
     ],
-    outputLabel: "Total Consumables per Batch",
-    outputUnit: "units of consumables"
+    outputLabel: "Recommended Quote Price Index",
+    outputUnit: "index units"
   },
   {
     slug: "tolerance-checker",
-    title: "Component & Build Tolerance Checker",
-    tagline: "Validate measured component specs against engineering rules with pass/fail boundaries.",
-    category: "QC & Tolerances",
-    description: "Enter technical target dimensions and allowed tolerances to immediately verify if a manufactured component passes factory inspection standards.",
+    title: "Specification Tolerance Checker",
+    tagline: "Validate measured dimensions against target specifications with pass/fail bounds.",
+    category: "Specifications",
+    description:
+      "Enter target dimensions and allowed tolerances to verify whether a sample meets client specifications.",
     formulaDescription: "Status = (Actual >= Target - Tolerance && Actual <= Target + Tolerance) ? PASS : REJECT",
     inputs: [
       { name: "targetMeasurement", label: "Specification Target Dimension", defaultValue: 54.0, unit: "mm/cm" },
@@ -565,40 +550,40 @@ export const FREE_TOOLS: ToolItem[] = [
       { name: "actualMeasurement", label: "Physical Measured Value", defaultValue: 54.4, unit: "mm/cm" }
     ],
     outputLabel: "Tolerance Deviation Status",
-    outputUnit: "PASS (+0.4mm within ±1.0mm limit)"
+    outputUnit: "PASS (+0.4 within ±1.0 limit)"
   }
 ];
 
 export const INTEGRATION_CATEGORIES = [
   {
-    name: "CAD/CAM & Technical Engineering",
-    description: "Direct import of technical drawings, DXF/STEP patterns, specifications, and machine files.",
-    partners: ["AutoCAD / SolidWorks", "Gerber Technology", "Lectra Modaris", "Siemens NX", "Fusion 360"]
+    name: "Google Workspace & Meetings",
+    description: "Native OAuth2 connection for Google Calendar scheduling, automatic Google Meet video links, and .ics email invites.",
+    partners: ["Google Calendar API v3", "Google Meet Video", "Gmail SMTP / RFC 5545 .ics", "Google Sign-In (GSI)"]
   },
   {
-    name: "Cloud Evidence & CDN",
-    description: "Cryptographically signed high-res photographic evidence for every production checkpoint.",
-    partners: ["Cloudinary", "AWS S3 Enterprise", "Google Cloud Storage", "Cloudflare Images"]
+    name: "Google Business & Storefront SEO",
+    description: "Sync live Google Maps ratings and customer reviews directly onto your public Veave storefront.",
+    partners: ["Google Places API (New)", "Google Business Profile OAuth2", "Custom DNS (TXT / CNAME)", "OpenGraph & SEO Meta"]
   },
   {
-    name: "Shopfloor Barcode & Hardware",
-    description: "Seamless scanning with industrial handhelds, tablet cameras, and automated conveyor eyes.",
-    partners: ["Zebra Technologies", "Honeywell Industrial", "Datalogic", "Brother RFID Scanners"]
+    name: "Paddle Billing & Global Tax MoR",
+    description: "Merchant-of-Record subscription billing, 14-day card-authorized trials, regional pricing overrides, and automated tax invoices.",
+    partners: ["Paddle Billing v2", "Paddle.js Overlay Checkout", "Paddle PricePreview", "Paddle Customer Portal"]
   },
   {
-    name: "ERP, Invoicing & Payroll",
-    description: "Sync job costing, bill of materials, contractor payments, and double-entry general ledger.",
-    partners: ["QuickBooks Online", "Xero Accounting", "SAP Business One", "Oracle NetSuite"]
+    name: "Cloudflare R2 & Private Document Vault",
+    description: "Presigned upload/download streams, immutable onboarding compliance vaults, and per-tenant storage quota enforcement.",
+    partners: ["Cloudflare R2 Object Storage", "Presigned S3-Compatible URLs", "Antivirus & Magic-Byte Scan", "Per-Tier Quota Meters"]
   },
   {
-    name: "B2B Brand Feeds & eCommerce",
-    description: "Ingest client wholesale orders directly from retail portals, ERPs, and custom storefronts.",
-    partners: ["Shopify B2B", "WooCommerce Wholesale", "Joor Wholesale", "NuORDER by Lightspeed"]
+    name: "Security, 2FA & Multi-Tenant Governance",
+    description: "Subdomain isolation, two-step authentication, support impersonation handoffs, and immutable audit trails.",
+    partners: ["RFC 6238 Authenticator TOTP", "Sequential Email OTP + Recovery Codes", "JWT Refresh Rotation", "Scoped Support Impersonation"]
   },
   {
-    name: "Real-Time Factory Messaging",
-    description: "Instant shopfloor escalation alerts, daily executive morning briefs, and automated milestone texts.",
-    partners: ["WhatsApp Business API", "Telegram Bot API", "Slack Enterprise", "Twilio SMS"]
+    name: "Real-Time Messaging & Mobile Client App",
+    description: "WebSocket notifications for staff and a dedicated mobile app for buyers to track orders and approve proposals.",
+    partners: ["Socket.IO Real-Time Gateway", "Veave Mobile Client App", "Firebase Cloud Messaging (FCM)", "CSV Ledger Exports"]
   }
 ];
 
@@ -606,149 +591,123 @@ export const VEAVE_FAQS = [
   {
     id: 1,
     category: "Getting started",
-    question: "Is Veave built for all types of factories and manufacturing industries?",
+    question: "Is Veave only for QC workflows, or is it a complete CRM and business platform?",
     answer:
-      "Yes. Veave is engineered specifically for modern production factories, assembly plants, fabrication facilities, and specialized manufacturing workshops—from 20-worker boutique facilities to 500-operator multi-line production plants across electronics, hardware, consumer goods, furniture, textiles, and packaging. It replaces paper job travelers and disjointed messaging chats with structured sequential assembly workflows."
+      "Veave is a complete multi-tenant Business OS and CRM. It includes a public Storefront & Visual Website Builder, Inbound Leads, Customer Directory, Google Calendar & Meet scheduling, Sales Opportunities & Counter-Proposals, Order Management, a Visual Floor Plan board, Kanban Tasks, Financial Records & Payroll, Real-Time Team Chat, a Cloudflare R2 Document Vault, and optional QC checkpoints."
   },
   {
     id: 2,
     category: "Getting started",
-    question: "How long does factory onboarding and setup take?",
+    question: "How does the self-serve onboarding and 14-day free trial work?",
     answer:
-      "Most manufacturing facilities are live within 48 to 72 hours. You configure your factory departments (e.g. Prep -> Staging -> Assembly -> QC -> Packaging), import active orders via CSV or direct entry, and assign mobile accounts to department heads. Self-serve onboarding is supported by our dedicated engineering team."
+      "Click 'Start free trial' to complete our 4-step onboarding wizard: (1) claim your subdomain and create your admin account, (2) enter your business profile, employee count, and tax/registration details, (3) upload compliance documents to your private Cloudflare R2 vault, and (4) choose your plan (Base, Professional, or Enterprise) and authorize your card for $0.00 via Paddle Billing. Your 14-day trial activates immediately and converts to your chosen plan only after the trial ends."
   },
   {
     id: 3,
     category: "Getting started",
-    question: "Does Veave work on mobile phones and shopfloor tablets?",
+    question: "How do existing team members log in to their workspace?",
     answer:
-      "Yes. The Department Head and QC Inspector interfaces are designed specifically for smartphones and tablets. Operators on the factory floor can scan QR traveler codes with their device camera, view checkpoints, and upload photo evidence with zero software installation required."
+      "Click 'Log in' in the top navigation bar and enter your work email or workspace subdomain. Veave locates your isolated tenant portal (e.g. yourcompany.veave.systemic.pk) and routes you directly to your sign-in screen."
   },
   {
     id: 4,
-    category: "Getting started",
-    question: "Can our factory operators use the app in multiple languages?",
+    category: "CRM & Storefront",
+    question: "Is a public website and quote estimator included with my workspace?",
     answer:
-      "Yes. Every staff member can toggle their interface language independently (e.g. English, Urdu, Spanish, Bengali). A line supervisor can view instructions in Urdu while your quality head reviews specs in English."
+      "Yes. Every workspace includes a multi-page storefront on your subdomain (plus custom domain support on Enterprise). You can customize 6 hero layouts, 12 visual themes, colors, business hours, live Google Reviews, and a category price estimator that feeds inquiries straight into your CRM Leads tab."
   },
   {
     id: 5,
-    category: "Shopfloor & Workflows",
-    question: "How do sequential departmental checkpoints work?",
+    category: "CRM & Storefront",
+    question: "How do Google Meet appointments and sales opportunities work?",
     answer:
-      "Veave digitizes the physical assembly line. An order cannot skip a department or be marked completed until the department supervisor logs the required checkpoints (e.g. material yield, dimension tolerance, bonding strength test) and uploads photographic evidence."
+      "From any lead or customer record, you can schedule a meeting synced with Google Calendar that automatically generates a Google Meet link and emails an .ics invite. When you send a quote or counter-proposal under Opportunities, won deals convert into active orders in one click with advance payment terms tracked automatically."
   },
   {
     id: 6,
-    category: "Shopfloor & Workflows",
-    question: "What happens when QC rejects a production batch?",
+    category: "Operations & Roles",
+    question: "Can we customize workflows and staff roles for different departments?",
     answer:
-      "If a QC Inspector rejects an inspection checkpoint, the batch status instantly switches to high-contrast red. The assigned department supervisor receives an immediate notification with the inspector's exact remarks (e.g., 'Tolerance mismatch of 1.8mm at sub-assembly'). The batch is locked until rectification photos are uploaded and re-approved."
+      "Yes. You define the exact departments and operations an order flows through, and you can assign staff to 7 built-in role presets (Product Manager, Sales Representative, Merchandiser, Accountant, Marketing Manager, Floor Supervisor, QC Inspector) or toggle access across 12 workspace modules."
   },
   {
     id: 7,
-    category: "Shopfloor & Workflows",
-    question: "Can we customize the sequence of departments per product or order?",
+    category: "Operations & Roles",
+    question: "How do clients track orders and approve proposals?",
     answer:
-      "Yes. A standard component might flow through Prep -> Assembly -> QC -> Packaging, while a complex custom assembly might flow through Fabrication -> Surface Treatment -> Sub-Assembly -> Final Assembly -> QC -> Finishing. Factory admins have drag-and-drop freedom to customize the stage path for every product line."
+      "Buyers receive access to the Veave Client Mobile App, where they can review counter-proposals, attach design specifications, track live order stage progress, approve completed milestones, and submit verified reviews after delivery."
   },
   {
     id: 8,
-    category: "Quality Control (QC)",
-    question: "Are photographic evidence uploads cryptographically secured?",
+    category: "Security & Billing",
+    question: "How are our business documents and billing handled?",
     answer:
-      "Yes. All checkpoint photos uploaded by supervisors are signed cryptographically and stored in tamper-proof Cloudinary CDN archives with unalterable timestamps, operator IDs, and GPS/device metadata. This protects your factory against client claims of defect-laden shipments."
-  },
-  {
-    id: 9,
-    category: "Quality Control (QC)",
-    question: "Can assembly operators approve their own work?",
-    answer:
-      "No. Veave enforces strict separation of duties. Only certified QC staff assigned the QC Inspector role have permission to sign off on quality checkpoints. Operators and department heads can only submit evidence; they cannot approve it."
-  },
-  {
-    id: 10,
-    category: "Multi-Tenancy & Security",
-    question: "How is our factory data isolated from competitors?",
-    answer:
-      "Veave utilizes a strict Subdomain Multi-Tenant architecture (e.g. yourfactory.veave.pk). Your database queries are scoped by unique tenant company IDs at the middleware level. Factory A cannot view Factory B's specs, order counts, product pictures, or client pricing under any circumstances."
-  },
-  {
-    id: 11,
-    category: "Multi-Tenancy & Security",
-    question: "Can clients and brand buyers track their orders?",
-    answer:
-      "Yes. You can grant brand clients read-only access to their specific order milestone tracker. They see real-time progress percentages and approved QC photos without needing to call your merchandisers."
-  },
-  {
-    id: 12,
-    category: "Integrations & Hardware",
-    question: "Does Veave integrate with QuickBooks and our accounting software?",
-    answer:
-      "Yes. Veave links directly with QuickBooks Online and Xero. When an order is completed and dispatched, customer invoices, material cost allocations, and labor expenditures sync automatically to your chart of accounts."
+      "Onboarding and compliance documents are stored in an encrypted, tenant-isolated Cloudflare R2 private vault. Subscriptions are processed by Paddle Billing (our Merchant of Record), supporting international Visa/Mastercard, regional pricing overrides, automatic tax compliance, and 1-click plan upgrades, downgrades, or cancellation from your Billing tab."
   }
 ];
 
 export const PRICING_TIERS = [
   {
-    id: "atelier",
-    name: "Workshop & Studio",
-    price: "$149",
+    id: "BASE",
+    name: "Base",
+    price: "$29",
+    pkPrice: "$12",
+    annualPrice: "$290",
+    pkAnnualPrice: "$120",
     period: "per month",
-    description: "Engineered for specialized manufacturing workshops, fabrication studios, and assembly teams.",
+    description: "Core CRM, storefront builder, order tracking, and financial records for growing businesses and workshops.",
     features: [
-      "Up to 3 active production departments",
-      "Up to 100 active monthly production units",
-      "Unlimited Department Head mobile accounts",
-      "1 Certified QC Inspector seat",
-      "Cloudinary signed photo evidence (10GB)",
-      "Digital QR traveler job cards",
-      "Subdomain multi-tenant isolation",
-      "Email & WhatsApp chat support"
+      "Up to 4 Production Departments & 1 Location",
+      "Up to 10 Staff Accounts with Custom Role ACLs",
+      "150 Active Orders & Full CRM Leads / Customers",
+      "10 GB Cloudflare R2 Private Document & Media Storage",
+      "Visual Storefront Builder (3 Pages & 2 Themes)",
+      "Real-Time Team Chat, Kanban Tasks & Financial Ledger",
+      "14-day free trial via Paddle ($0.00 due today)"
     ],
-    ctaText: "Start 14-Day Free Trial",
+    ctaText: "Start 14-day free trial",
     popular: false
   },
   {
-    id: "factory",
-    name: "Production Factory",
-    price: "$349",
+    id: "PROFESSIONAL",
+    name: "Professional",
+    price: "$79",
+    pkPrice: "$29",
+    annualPrice: "$790",
+    pkAnnualPrice: "$290",
     period: "per month",
-    description: "The complete platform for manufacturing facilities running multiple active assembly lines.",
+    description: "Complete CRM, Google Meet & Reviews integrations, and multi-line operations for scaling companies.",
     features: [
-      "Unlimited custom department sequences",
-      "Up to 1,500 active monthly production units",
-      "Unlimited Department Heads & line supervisors",
-      "5 Certified QC Inspector seats",
-      "Cloudinary signed photo evidence (100GB)",
-      "Interactive visual factory floor plan",
-      "Defect callout & rectification loops",
-      "Daily Telegram morning executive briefings",
-      "QuickBooks Online & Xero accounting sync",
-      "Client order tracking portal with photo proof",
-      "Priority 24/7 technical support"
+      "Up to 12 Departments & 3 Business Locations",
+      "Up to 35 Staff Accounts & All 7 Role Presets",
+      "1,000 Active Orders, Opportunities & Counter-Proposals",
+      "50 GB Cloudflare R2 Private Document & Media Storage",
+      "Google Calendar, Google Meet & Google Places Reviews Sync",
+      "Visual Storefront Builder (5 Pages & 6 Curated Themes)",
+      "Priority Chat & Email Support"
     ],
-    ctaText: "Start 14-Day Production Trial",
+    ctaText: "Start 14-day free trial",
     popular: true
   },
   {
-    id: "enterprise",
-    name: "Enterprise Multi-Plant",
-    price: "$799",
+    id: "ENTERPRISE",
+    name: "Enterprise",
+    price: "$249",
+    pkPrice: "$99",
+    annualPrice: "$2,490",
+    pkAnnualPrice: "$990",
     period: "per month",
-    description: "For multi-site manufacturers and enterprises managing multiple physical plants.",
+    description: "High-volume multi-site operations requiring custom domains, white-label branding, and maximum capacity.",
     features: [
-      "Multi-factory plant management under SuperAdmin",
-      "Unlimited production volume & runs",
-      "Unlimited Department Heads & QC Inspector seats",
-      "Unlimited Cloudinary photographic evidence storage",
-      "Custom industrial CAD/CAM integrations",
-      "Industrial barcode scanner & hardware API connectors",
-      "Custom SLA with 99.99% uptime guarantee",
-      "Dedicated solutions engineer & on-site training"
+      "Unlimited Departments, Staff Accounts & Active Orders",
+      "Up to 10 Business Locations",
+      "500 GB Cloudflare R2 Private Document & Media Storage",
+      "Custom Domain Connection (DNS Verification) & Custom Logo",
+      "All 12+ Storefront Themes & Unlimited Pages",
+      "Enforced Workspace 2FA, Full Audit Logs & SLA Readiness",
+      "Dedicated Account Lead"
     ],
-    ctaText: "Contact Enterprise Sales",
+    ctaText: "Start 14-day free trial",
     popular: false
   }
 ];
-

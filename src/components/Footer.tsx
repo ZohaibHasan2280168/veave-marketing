@@ -2,82 +2,83 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Globe } from "lucide-react";
 
 export default function Footer() {
   const productLinks = [
-    { label: "Order Intake & BOM", href: "/features/order-intake" },
-    { label: "Production Workflows", href: "/workflows" },
-    { label: "Independent QC & Proof", href: "/features/photo-evidence" },
-    { label: "Role Workspaces", href: "/roles/admin" },
-    { label: "Integrations", href: "/integrations" },
+    { label: "Storefront & Website Builder", href: "/features/visual-website-builder" },
+    { label: "Buyer CRM & Opportunities", href: "/features/opportunities-proposals" },
+    { label: "Google Meet & Reviews Sync", href: "/features/google-meet-appointments" },
+    { label: "Orders & Visual Floor Plan", href: "/features/visual-floor-plan" },
+    { label: "Financial Records & Role Matrix", href: "/features/financial-records-ledger" },
+    { label: "Cloudflare R2 Document Vault", href: "/features/cloudflare-r2-vault" },
+  ];
+
+  const workspaceLinks = [
+    { label: "Start 14-day free trial", href: "/signup" },
+    { label: "Log in to workspace", href: "/login" },
+    { label: "Pricing & Paddle plans", href: "/pricing" },
+    { label: "Workspace Admin console", href: "/roles/admin" },
+    { label: "Operations & Dept Lead view", href: "/roles/dept-head" },
+    { label: "Quality verification queue", href: "/roles/qc" },
   ];
 
   const resourceLinks = [
-    { label: "Free Factory Calculators", href: "/tools" },
-    { label: "Pricing Plans", href: "/pricing" },
-    { label: "Client Order Tracking", href: "/signup" },
-    { label: "Documentation / Knowledge Base", href: "/contact" },
-  ];
-
-  const companyLinks = [
-    { label: "About Veave", href: "/contact" },
-    { label: "Schedule a Walkthrough", href: "/contact" },
-    { label: "Contact Support", href: "mailto:info@veave.pk" },
-    { label: "Security & Data Privacy", href: "/features/subdomain-isolation" },
+    { label: "End-to-end lifecycle", href: "/workflows" },
+    { label: "Integrations & architecture", href: "/integrations" },
+    { label: "Free production calculators", href: "/tools" },
+    { label: "Contact & support", href: "/contact" },
   ];
 
   return (
-    <footer id="site-footer" className="bg-[#0F2439] text-slate-300 border-t border-slate-800/80">
-      <div className="mx-auto w-full max-w-7xl px-6 py-14">
-        
-        {/* Main 4-Column Consolidated Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          
-          {/* Column 1 — Brand & Direct Contact (Wider Span: 5 cols) */}
-          <div className="lg:col-span-5 flex flex-col items-start gap-4">
+    <footer id="site-footer" className="bg-[#0f2330] text-[#c6d6e1] border-t border-white/[0.08]">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 items-start">
+          {/* Column 1 — Brand & Signature */}
+          <div className="lg:col-span-4 flex flex-col items-start gap-4">
             <Link href="/" className="inline-block" aria-label="Veave home">
               <Image
                 src="/assets/veave/brand/veave-lockup-reversed.svg"
-                alt="Veave The Apparel Manufacturing & Factory OS"
-                width={150}
-                height={32}
-                className="h-7 sm:h-8 w-auto object-contain"
+                alt="Veave"
+                width={140}
+                height={30}
+                className="h-7 w-auto object-contain"
               />
             </Link>
 
-            <p className="text-sm text-slate-300 leading-relaxed max-w-sm mt-1">
-              The Production Management System for Garment Factories &amp; Ateliers. Track every order from intake to dispatch with verified QC.
+            <p className="text-xs text-[#8fa9bb] leading-relaxed max-w-sm">
+              The complete multi-tenant CRM, storefront website builder, order pipeline, and
+              financial ledger for modern manufacturing businesses and workshops.
             </p>
 
-            {/* Clean Contact Details */}
-            <div className="flex flex-col gap-2.5 pt-2 text-sm text-slate-300">
-              <div className="flex items-center gap-2.5">
-                <Mail className="size-4 text-[#0e6bfd] shrink-0" />
+            <div className="inline-flex items-center gap-2 rounded-md border border-white/[0.08] bg-[#122a38] px-2.5 py-1 font-mono text-[11px] text-[#c6d6e1]">
+              <span className="size-1.5 rounded-full bg-[#4cc38a]" />
+              <span>veave.systemic.pk · Multi-tenant cloud</span>
+            </div>
+
+            <div className="flex flex-col gap-2 pt-1 text-xs text-[#8fa9bb]">
+              <div className="flex items-center gap-2">
+                <Mail className="size-3.5 stroke-[1.5] text-[#9cc4ff] shrink-0" />
                 <a href="mailto:info@veave.pk" className="hover:text-white transition-colors">
                   info@veave.pk
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="size-4 text-[#0e6bfd] shrink-0" />
-                <a href="tel:+14074098383" className="hover:text-white transition-colors">
-                  (407) 409-8383
-                </a>
+              <div className="flex items-center gap-2">
+                <Globe className="size-3.5 stroke-[1.5] text-[#9cc4ff] shrink-0" />
+                <span>Subdomain &amp; custom domain isolation</span>
               </div>
             </div>
           </div>
 
-          {/* Column 2 — Product (2 or 3 cols) */}
-          <div className="lg:col-span-2 sm:col-span-1 flex flex-col gap-4">
-            <h3 className="font-semibold text-white text-sm tracking-tight">
-              Product
-            </h3>
-            <ul className="space-y-3 text-sm">
+          {/* Column 2 — Platform Modules */}
+          <div className="lg:col-span-3 flex flex-col gap-3">
+            <h3 className="font-medium text-white text-xs">Platform modules</h3>
+            <ul className="space-y-2.5 text-xs">
               {productLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-300 hover:text-white transition-colors block"
+                    className="text-[#8fa9bb] hover:text-white transition-colors block"
                   >
                     {link.label}
                   </Link>
@@ -86,17 +87,32 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 — Resources & Tools (2 or 3 cols) */}
-          <div className="lg:col-span-3 sm:col-span-1 flex flex-col gap-4">
-            <h3 className="font-semibold text-white text-sm tracking-tight">
-              Resources &amp; Tools
-            </h3>
-            <ul className="space-y-3 text-sm">
+          {/* Column 3 — Onboarding & Access */}
+          <div className="lg:col-span-3 flex flex-col gap-3">
+            <h3 className="font-medium text-white text-xs">Onboarding &amp; workspaces</h3>
+            <ul className="space-y-2.5 text-xs">
+              {workspaceLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-[#8fa9bb] hover:text-white transition-colors block"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4 — Resources */}
+          <div className="lg:col-span-2 flex flex-col gap-3">
+            <h3 className="font-medium text-white text-xs">Resources</h3>
+            <ul className="space-y-2.5 text-xs">
               {resourceLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-300 hover:text-white transition-colors block"
+                    className="text-[#8fa9bb] hover:text-white transition-colors block"
                   >
                     {link.label}
                   </Link>
@@ -104,42 +120,24 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Column 4 — Company & Support (2 cols) */}
-          <div className="lg:col-span-2 sm:col-span-1 flex flex-col gap-4">
-            <h3 className="font-semibold text-white text-sm tracking-tight">
-              Company &amp; Support
-            </h3>
-            <ul className="space-y-3 text-sm">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-slate-300 hover:text-white transition-colors block"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-slate-800/80 pt-6 mt-10 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
-          <p>&copy; 2026 Veave Technologies LLC. All rights reserved.</p>
-          <div className="flex items-center gap-3 text-slate-400">
-            <Link href="/contact" className="hover:text-white transition-colors">
-              Privacy Policy
+        <div className="border-t border-white/[0.08] pt-6 mt-10 flex flex-col sm:flex-row justify-between items-center text-xs text-[#8fa9bb] gap-4">
+          <p>&copy; 2026 Veave Technologies. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/login" className="hover:text-white transition-colors">
+              Workspace login
             </Link>
-            <span>&bull;</span>
-            <Link href="/contact" className="hover:text-white transition-colors">
-              Terms of Service
+            <span>·</span>
+            <Link href="/signup" className="hover:text-white transition-colors">
+              Start free trial
+            </Link>
+            <span>·</span>
+            <Link href="/pricing" className="hover:text-white transition-colors">
+              Paddle Billing terms
             </Link>
           </div>
         </div>
-
       </div>
     </footer>
   );

@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Veave | The Multi-Industry Factory & Production Management OS",
+  title: "Veave | The Complete Multi-Tenant CRM, Storefront & Operations Platform",
   description:
-    "Digitize your factory assembly lines with sequential departmental workflows, Cloudinary signed photographic evidence, independent QC inspection gates, and subdomain multi-tenant security.",
+    "Run your storefront website, buyer CRM, Google Meet appointments, sales opportunities, production orders, visual floor plan, financial records, and Paddle billing from one isolated workspace.",
   icons: {
     icon: "/assets/veave/brand/veave-icon-primary.svg",
   },

@@ -1,87 +1,106 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Globe, Lock } from "lucide-react";
+
+const SAMPLE_WORKSPACES = [
+  "atlas-apparel.veave.systemic.pk",
+  "meridian-studio.veave.systemic.pk",
+  "nordic-craft.veave.systemic.pk",
+  "crescent-textiles.veave.systemic.pk",
+];
 
 export default function FinalCta() {
-  return (
-    <section className="relative overflow-hidden bg-[#122a38] text-white py-16 sm:py-20 lg:py-24 border-t border-white/10">
-      {/* Ambient background glow */}
-      <div className="pointer-events-none absolute inset-0 hero-glow opacity-60" />
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[450px] w-[650px] rounded-full bg-[#0e6bfd]/15 blur-[120px]" />
+  const [hostIdx, setHostIdx] = useState(0);
 
-      <div className="relative mx-auto w-full max-w-5xl px-4 sm:px-6 text-center flex flex-col items-center gap-6">
-        
-        {/* Eyebrow Badge */}
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHostIdx((prev) => (prev + 1) % SAMPLE_WORKSPACES.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="relative bg-[#0e2230] text-white py-20 sm:py-24 border-t border-white/[0.08] overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-60" aria-hidden="true" />
+      <div className="pointer-events-none absolute top-0 left-1/4 right-1/4 h-px edge-highlight" aria-hidden="true" />
+
+      <div className="relative mx-auto w-full max-w-4xl px-4 sm:px-6 text-center flex flex-col items-center gap-6">
+        {/* Animated Subdomain Preview Ticker */}
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-[#9cc4ff] backdrop-blur-md"
+          transition={{ duration: 0.45 }}
+          className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.14] bg-[#091823] px-4 py-2 font-mono text-xs text-[#c6d6e1] shadow-md"
         >
-          <Sparkles className="size-3.5 text-[#9cc4ff]" />
-          <span>EVERY RECORD. A CLEARER NEXT STEP.</span>
+          <Lock className="size-3.5 text-[#4cc38a] shrink-0" />
+          <span className="text-[#8ba5b8]">https://</span>
+          <div className="relative h-5 flex items-center overflow-hidden min-w-[245px] text-left">
+            <AnimatePresence mode="popLayout" initial={false}>
+              <motion.span
+                key={SAMPLE_WORKSPACES[hostIdx]}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="block leading-none text-white"
+              >
+                {SAMPLE_WORKSPACES[hostIdx]}
+              </motion.span>
+            </AnimatePresence>
+          </div>
+          <Globe className="size-3.5 text-[#9cc4ff] shrink-0 hidden sm:block" />
         </motion.div>
 
-        {/* Main Headline */}
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.55, delay: 0.08 }}
-          className="text-3xl sm:text-4xl lg:text-[46px] font-semibold tracking-tight text-white leading-[1.15] max-w-2xl"
+          transition={{ duration: 0.5, delay: 0.06 }}
+          className="text-3xl sm:text-4xl lg:text-[46px] font-semibold tracking-[-0.025em] text-white leading-[1.1] max-w-2xl"
         >
-          Move your factory operations forward.
+          Launch your isolated business workspace today
         </motion.h2>
 
-        {/* Subhead */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.55, delay: 0.16 }}
-          className="text-base sm:text-lg text-[#c6d6e1] max-w-xl leading-relaxed"
+          transition={{ duration: 0.5, delay: 0.12 }}
+          className="text-[15px] sm:text-base text-[#c6d6e1] max-w-xl leading-relaxed"
         >
-          A connected system for the work that matters every day. Run your inventory, website, CRM, deals, payments and books from one platform.
+          Claim your subdomain, enter your business profile and compliance documents, and activate
+          your 14-day trial on Base, Professional, or Enterprise via Paddle Billing.
         </motion.p>
 
-        {/* Dual Action CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.55, delay: 0.24 }}
-          className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2"
+          transition={{ duration: 0.5, delay: 0.18 }}
+          className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2"
         >
           <Link
             href="/signup"
-            className="inline-flex items-center justify-center gap-2 rounded-[7px] bg-[#0e6bfd] hover:bg-[#0b5ad9] text-white font-semibold text-base px-7 py-3.5 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35 transition-all active:scale-[0.98]"
+            className="group inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-[#0e6bfd] hover:bg-[#0b5ad9] text-white font-medium text-sm px-6 shadow-[0_12px_28px_-6px_rgba(14,107,253,0.55)] transition-all active:scale-[0.98]"
           >
-            <span>Start free trial</span>
-            <ArrowRight className="size-4" />
+            <span>Start 14-day free trial</span>
+            <ArrowRight className="size-4 stroke-[1.5] transition-transform group-hover:translate-x-0.5" />
           </Link>
           <Link
-            href="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-[7px] border border-white/20 bg-white/[0.08] hover:bg-white/[0.14] text-white font-semibold text-base px-6 py-3.5 backdrop-blur-md transition-all active:scale-[0.98]"
+            href="/login"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-white/[0.16] bg-white/[0.06] hover:bg-white/[0.12] text-white font-medium text-sm px-6 transition-colors"
           >
-            <span>Schedule demo</span>
+            <span>Log in to workspace</span>
           </Link>
         </motion.div>
 
-        {/* Reassurance Badge */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.32 }}
-          className="flex items-center gap-2 text-xs text-[#8fa9bb] pt-2"
-        >
-          <CheckCircle2 className="size-4 text-[#5fb58a]" />
-          <span>14-day production trial. Dedicated subdomain. No setup fees.</span>
-        </motion.div>
-
+        <div className="font-mono text-xs text-[#8ba5b8] tabular-nums pt-1">
+          $0.00 charged today · Automatic plan activation after 14-day trial · Cancel any time
+        </div>
       </div>
     </section>
   );

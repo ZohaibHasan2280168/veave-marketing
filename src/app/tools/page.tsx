@@ -89,15 +89,15 @@ export default function ToolsIndexPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/signup"
-                className="rounded-[7px] bg-[#0e6bfd] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0b5ad9] transition-all"
+                className="rounded-lg bg-[#0e6bfd] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#0b5ad9] transition-colors"
               >
-                Start 14-Day Free Trial
+                Start 14-day free trial
               </Link>
               <Link
-                href="/contact"
-                className="rounded-[7px] border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all"
+                href="/login"
+                className="rounded-lg border border-white/20 px-5 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors"
               >
-                Schedule Factory Walkthrough
+                Log in to workspace
               </Link>
             </div>
           </div>

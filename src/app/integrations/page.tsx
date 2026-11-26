@@ -13,16 +13,18 @@ export default function IntegrationsPage() {
         {/* Header */}
         <section className="bg-[#122a38] text-white pt-20 pb-20 border-b border-white/10 relative overflow-hidden">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative text-center flex flex-col items-center gap-4">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#0e6bfd]/20 border border-[#0e6bfd]/30 px-3.5 py-1 text-xs font-bold text-[#9cc4ff]">
-              CONNECTED TEXTILE ECOSYSTEM
+            <span className="font-mono text-xs text-[#9cc4ff]">
+              Connected platform architecture
             </span>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.15] max-w-3xl">
-              Connects with Your CAD, Scanners, ERP &amp; Cloud Storage
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-[-0.02em] text-white leading-[1.12] max-w-3xl">
+              Connects with Google Workspace, Cloudflare R2 &amp; Paddle Billing
             </h1>
 
-            <p className="text-base sm:text-lg text-[#c6d6e1] leading-relaxed max-w-2xl">
-              Veave interfaces seamlessly with the apparel CAD formats, Cloudinary cryptographic media archives, handheld barcode scanners, and accounting software your factory already uses.
+            <p className="text-base text-[#c6d6e1] leading-relaxed max-w-2xl">
+              Veave integrates directly with Google Calendar, Google Meet, Google Places Reviews,
+              Cloudflare R2 private object storage, and Paddle Merchant-of-Record subscription
+              billing.
             </p>
           </div>
         </section>
@@ -76,18 +78,18 @@ export default function IntegrationsPage() {
             <p className="text-sm text-[#c6d6e1] max-w-xl">
               Our engineering team builds custom webhooks and REST connectors for proprietary factory machinery, automated conveyors, and legacy ERP databases.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="rounded-[7px] bg-[#0e6bfd] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0b5ad9] transition-all"
-              >
-                Inquire About Custom Connectors
-              </Link>
+            <div className="flex flex-wrap gap-3">
               <Link
                 href="/signup"
-                className="rounded-[7px] border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all"
+                className="rounded-lg bg-[#0e6bfd] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#0b5ad9] transition-colors"
               >
-                Start Free Trial
+                Start 14-day free trial
+              </Link>
+              <Link
+                href="/login"
+                className="rounded-lg border border-white/20 px-5 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors"
+              >
+                Log in to workspace
               </Link>
             </div>
           </div>
